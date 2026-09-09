@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <style>
+        table, th, td{border : 1px solid black; border-collapse:collapse}
+        th, td{width: 100px; height: 40px; text-align: center;}
+    </style>
+    <body>
+        <table>
+            <tr>
+                <th>이름</th>
+                <th></th>
+                <th>연락처</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td colspan = "3"></td>
+            </tr>
+            <tr>
+                <th>자기소개</th>
+                <td colspan = "3"></td>
+            </tr>
+        </table>
+    </body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;
+        text-align: center;
+        }
+        th,td{width:100px; height:40px;}
+        thead{background: gray;} /* 표에서 특정한 곳(헤드)만 색깔을 넣고 싶을 때*/
+        tfoot{background: aqua;} /* 표에서 특정한 곳(마지막)만 색깔을 넣고 싶을 때*/
+        tbody{background: yellow;} /* 표에서 특정한 곳(헤드, 마지막 제외)만 색깔을 넣고 싶을 때*/
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+        <col width="100px">
+        <col width="200px">
+        <col width="100px">
+        <col width="200px">
+        </colgroup>
+        
+        <thead>
+        <tr>
+            <th>방 이름</td>
+            <th>대상</td>
+            <th>크기</td>
+            <th>가격</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>유채방</th>
+            <td>여성 도미토리</td>
+            <td rowspan = "3">4인실</td>
+            <td rowspan = "4">1인 20,000원</td>
+        </tr>
+        <tr>
+            <th rowspan = "2">동백방</th>
+            <td>동성도미토리</td>
+        </tr>
+        <tr>
+            <td>가족1팀</td>
+        </tr>
+        <tr>
+            <th>천혜향방</th>
+            <td>-</td>
+            <td>2인실</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan = "4">바깥채 전체를 렌트합니다.</th>
+        </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <table>
+            <tr>
+                <th>이름</th>
+                <th></th>
+                <th>연락처</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td colspan = "3"></td>
+            </tr>
+            <tr>
+                <th>자기소개</th>
+                <td colspan = "3"></td>
+            </tr>
+        </table>
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>
+
+        </title>
+        <style>
+
+            table,th,td{border:1px solid black;} /* 선두께 1px로 설정 */
+            td{width:100px; height:40px;} /*table{width:...; height:.. 해도 됨. 전체 크기를 기준으로 각 셀이 균분됨*/
+            td{text-align: center;} /*table 내 글자 정렬*/
+        </style>
+
+    </head>
+
+    <body>
+        
+        <table>
+            <tr>
+                <td>1행1열</td>
+                <td>1행2열</td>
+                <td>1행3열</td>
+                <td>1행4열</td>
+            </tr>
+            <tr>
+                <td rowspan = "2">2행1열</td> <!--2행 1열, 3행 1열을 합칠 경우 없어지는 3행 1열은 제거 -->
+                <td colspan = "3">2행2열</td> <!--2행 2~4열까지 합칠 경우 없어지는 3~4열은 제거 -->
+                
+            </tr>
+            <tr>
+                <td>3행2열</td>
+                <td>3행3열</td>
+                <td>3행4열</td>
+            </tr>
+        </table>
+    </body>
+</html>
