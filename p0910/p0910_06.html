@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang = 'en'>
+
+    <head><meta chrset = "utf-8">
+        <title>Document</title>
+        <style>
+        * { margin:0; padding:0;}
+        /* input{width: 100px; height: 40px;} 입력창 전체의 크기 설정, 아래의 줄은 id 주소만 지정해서 설정*/
+        #id{width: 100px; height: 40px;}
+        </style>
+    </head>
+
+    <body>
+        <form name = "frm" action = "p0910_05.html" method ="get">
+            <input type = "hidden" name = "location" value="부산">
+            <label for = "id">아이디</label>
+            <!-- <input type="text" name = "id" placeholder="아이디는8자"><br> -->
+            <input id="id" type = "text" value = "abc" name = "id" placeholder="아이디는8자"><br>
+            <!-- <input id="id" type = "text" name = "id" placeholder="아이디는8자"><br> -->
+
+            <label>패스워드</label>
+            <input type="password" name = "pw" placeholder="패스워드입력"><br>
+            <input type="submit" value="로그인">
+        </form>
+
+
+    </body>
+
+</html>
+
+<!-- action은 이동하는 주소(url), 아이디, 패스워드를 그냥 두면 옆으로, br 넣으면 상하로 표시
+placeholder는 입력창에 표시(입력하면 없어짐)하는 기능
+form은 action으로 가라는 의미, value는 버튼의 이름. method(id,pw전달) : get방식은 노출, post방식은 비노출
+(검색 시 경로에 정보가 노출, 비노출, 편의상 선택하되, 아이디, 비밀번호는 비노출해야 함), type = password란에 txt로 표시하면, 노출, password로 입력하면 비노출
+향후에는 id, pw를 db에 넣어서 사용
+<label for = "id">아이디</label>는 옆의 아이디 글자를 클릭해도 아이디 입력칸으로 들어감(for = 'id'로 연결했기 때문임, label과 input이 연결)
+maxlength="="3" 입력자리가 3개, size도 지정할 수 있음
+확인방법 : f12 누르고 network를 선택 -> disable cache 해제
+hidden : 검색 시 보이진 않지만, 검색하면 여러 정보(IP, 주소 등)를 저장했다가 넘겨줌
+회원가입 시 인증 이후 이름, 폰번호는 고정되는 경우.. 
+-->

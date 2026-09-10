@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang = 'en'>
+    <head><meta chrset = "utf-8">
+        <title>Document</title>
+        <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script> 
+        function postBtn(){};
+        new kakao.Postcode({
+        oncomplete: function(data) {}
+    }).open();
+        </script>
+        <style>
+        </style>
+
+    </head>
+    <body>
+        <form name = "frm" action = "p0910_05.html" method = "post">
+            <label>아이디</label>
+            <input type = "text" name = 'id' id = 'id'><br>
+            <label>패스워드</label>
+            <input type = "password" name = 'pw' id = 'pw'><br>
+            <label>이름</label>
+            <input type = "text" name = 'name' id = 'name'><br>
+            <label>주소</label><br>
+            <label>우편번호</label>
+            <input type = "text" name = 'postcode' id = 'postcode'>
+            <button type = "button" onclick="postBtn()">우편번호검색</button><br>
+            <!-- 버튼을 클릭하면 postBtn()이라는 자바스크립트 함수를 실행하라 -->
+            <label>주소</label>
+            <input type = "text" name = 'address' id = 'address'><br>
+            <label>상세주소</label>
+            <input type = "text" name = 'address' id = 'address'><br>
+            <label>성별</label><br>
+            <label>남자</label>
+            <input type = "radio" name = 'man' id = 'man'>
+            <label>여자</label>
+            <input type = "radio" name = 'woman' id = 'woman'><br>
+            <label>취미</label><br>
+            <label>게임</label>
+            <input type = "checkbox" name = 'game' id = 'game'>
+            <label>골프</label>
+            <input type = "checkbox" name = 'golf' id = 'golf'><br>
+            <br>
+            <select name = "major">
+                <!-- 고를 수 있는 리스트, major의 값에 value값이 들어감 -->
+                <option value = "컴퓨터공학과">컴퓨터공학과</option>
+                <option value = "국문학과">국문학과</option>
+                <option value = "수학과">수학과</option>
+                <option value = "건축공학과">건축공학과</option>
+                <option value = "영문학과">영문학과</option>
+                <option value = "기타">기타</option>
+            </select>
+
+            <input type = "submit" value ="전송">
+
+        </form>
+    </body>
+
+
+</html>
+
+<!-- 이 부분은 반드시 알아놔야 함, form에서 자료 주고 받는 것, input, radio, checkbox, select, option 등 -->
