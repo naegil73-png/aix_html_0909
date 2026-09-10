@@ -1,0 +1,4 @@
+f1 gitclone - 선택 - git허브 주소 선택 -> 폴더 선택
+
+open in 설치, live server 설치
+

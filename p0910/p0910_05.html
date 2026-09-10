@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang = 'en'>
+
+    <head><meta chrset = "utf-8">
+        <title>Document</title>
+        <style>
+        * { margin:0; padding:0;}
+        div{margin:50px auto; width:600px; text-align: center;}
+        h2{margin-bottom:30px; font-size:40px;}
+        </style>
+    </head>
+
+    <body>
+    <div>
+        <h2>이벤트페이지</h2>
+        <img src="images/event1.jpg" usemap="#ent">
+        </a>
+        <map name="ent">
+            <area shape="rect" coords="45,480,160,340"
+            href="https://www.apple.com/kr/shop/buy-ipad" target="_blank">
+            <--사각형 : rect-->
+            <area shape="rect" coords="175,480,290,340"
+            href="https://www.apple.com/kr/watch/" target="_blank">
+            <--원 : circle-->
+            <area shape="circle" coords="120,100,50"
+            href="https://www.samsung.com/sec/" target="_blank">
+            <--다각형 : poly-->
+            <area shape="poly" coords="385,60,470,60,520,150,320,150"
+            href="https://www.naver.com/" target="_blank">
+        </map>
+    </div>
+    </body>
+
+</html>
+
+<!-- 페이지 내 여러개 이미지 있을 때, 각 이미지 마다 다른 사이트로 이동하게 하는 방법 :
+usermap의 이름은 임의, 박스는 대각선 방향으로 점 2개면 만들 수 있음. 원형은 1개 좌표와 반지름, 다각형인 경우는 모든 좌표를 입력해야 함,
+입력순서는 그리는 순서에 따라 해야 함 -->
