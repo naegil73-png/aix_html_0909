@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+        <style>
+            div{width: 500px;height: 100px;border: 1px solid black;
+                /* width:70% : 화면의 70%로 맞춰라-> 화면크기를 조정하면, 박스크기가 조정됨 */
+            white-space: nowrap;
+            letter-spacing: 5px;
+            word-spacing: 20px;
+            text-overflow: hidden;
+            text-overflow: ellipsis;
+            font-size:20px;
+            margin-bottom:20px;
+            padding-top:50px;
+            }
+            img{width: 10px;}
+            span{font-size: 50px;}
+            div:hover{
+            background: yellow; cursor:pointer;
+            overflow: visible;
+            width: 900px;
+            p{font-size: 50px;}
+            }
+        </style>
+        <!-- 문자스타일 : nowrap은 박스에서 끝을 만나도 박스 박으로 글이 이어짐, letter-spacing: 글자 간격만큼 간격, word-spacing: 단어와 단어 사이의 간격
+        overflow: hidden: 박스에서 넘어가는 글자는 가려줌(text-overflow: hidden은 넘어가는 글자를 ...표시), 
+        overflow: visible; 사라졌던 글자가 마우스를 가져다 대면 보이는 기능, hover 구간의 width를 정하면, 마우스 대는 순간 박스도 그사이즈로 보여줌
+        direction: 텍스트 쓰는 방향, text-indent: 들여쓰기, line-height: 글간격, -->
+    </head>
+    <body> 
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <img src="images/icon1.png">아이콘
+    <hr>
+    <p><i class="fa-solid fa-location-dot"></i>아이콘</p>
+
+        <div>호르무즈 이어 홍해까지 장악되나···후티, 홍해 연안의 주요 도시 모카 접수
+            
+
+        </div>
+
+
+    </body>
+
+
+</html>
