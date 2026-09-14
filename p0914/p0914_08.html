@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 300px; height: 200px; border: 2px solid pink;}
+        span{width: 300px; height: 200px; border: 2px solid pink;
+        display: block;}
+        /* display:inline-block으로 해서 두개의 특성을 모두 가질 수 있음(width, height를 모두 가질 수 있음) */
+        #login{width: 120px;height: 40px;background: #efefef;
+        border:3px solid black; border-radius: 20px;}
+        /* # border-radius에 박스 높이의 절반을 값으로 주면, 끝이 동그랗게 나옴 -> 정사각형인 경우, 높이의 절반을 반지름으로 주면 원이 됨 */
+    </style>
+</head>
+<body>
+    <div id = "login">로그인</div>
+    <div>2</div>
+    <div>3</div>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+</body>
+</html>
+
+<!-- span은 width, height를 줄 수 없음, display를 block으로 하면, 세로 정렬이 됨, inline요소임. display는 속성을 바꾸는 것..
+html은 박스모형임. 인터넷에서 f12누른 후, 박스 클릭하면, 아래에 박스의 규격과 안, 팎의 여백값을 볼 수 있음.
+padding에서 3개 값이 있으면, 상,좌우,하 의 값을 나타냄, 2개면 상하, 좌우, 1개면 전체 모두 같은 값.
+박스는 무조건 width, height가 있음. 표의 전체 크기는 너비, 높이에 padding, 선 굵기 포함. margin은 미포함
+box-sizing: border-box -> 전체 포함된 크기 -> width, height는 전체크기-선굵기, padding을 제외해서 규격을 결정함
+border-style : 
+border-top
+-->

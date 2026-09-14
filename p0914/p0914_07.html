@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> *{margin: 0; padding: 0;}
+        ul{display: flex;}
+        li{width: 200px; height: 40px; border: 1px solid black;
+        background: pink;
+        list-style: none;
+        }
+        /*가로정렬은 float로 정렬할 수 있으나, display:flex를 하면 됨.
+        flex-direction으로 방향 지정할 수도 있음
+        공간이 부족할 경우, 박스는 하단으로 떨어짐. 전체 박스가 큰데, 부분 박스를 다 나열해도 공간이 남을 경우, flex-start, end, center, space-between*/ 
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>바나나</li>
+            <li>수박</li>
+            <li>참외</li>
+            <li>복숭아</li>
+        </ul>
+    </div>
+</body>
+</html>

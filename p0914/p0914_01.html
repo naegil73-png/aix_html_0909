@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+        h2,h3{text-align: center;}
+        /* div{text-align:center;} 이렇게 적용해도 됨 */
+        h2{font-size: 40px; font-family: 'Paperozi';
+            font-weight: 400;
+            font-style: normal;}
+        h3{font-size: 400px; font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;}
+
+    </style>
+</head>
+<body>
+    <div>
+    <h2>글꼴 관련 스타일</h2>
+    <h3>웹폰트: 웹 문서안에 글꼴 정보 저장</h3>
+    </div>
+</body>
+</html>
+
+<!-- 구글웹폰트 검색 후, 필요한 폰트 모두 선택해서 get embededcode 클릭 -> import 클릭 -> @~style 앞까지 복사 후 style바로 아래에 붙여 넣음,
+Nanum Brush Script:CSS class 등 원하는 폰트양식에서 font-family~ 복사해서 원하는 글자체 스타일에 추가, font-weight: 글자 두께(100~900까지 적용되나,
+서체에 따라서 차이가 있음, 제공하는 사이트에 font-weigh:400로 되어 있으면 -> 400만 적용됨)
+다른 사이트 : '눈누'@font-face~ 복사해서 style 바로 아래에 붙여 넣고, font-family만 원하는 글자 위치의 font-family만 반영해 주면 됨
+글자크기 : em - 반응형 글자크기(화면 크기에 따라 변화), px - 고정된 글자크기(컴퓨터, 휴대폰 적용 시 보기 곤란)
+이탤릭체 : <em>테그, <i>테그, 볼드체 : <strong> 또는 b
+    text-decoration : none, underline, overline, through
+    text-shodow:가로,세로,번짐정도,색깔투명도 - 세로에 -면 위로
+-->
