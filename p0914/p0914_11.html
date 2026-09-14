@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style> *{margin: 0; padding: 0;}
+        /* div{width: 100%; height:600; overflow: hidden; position: relative;} */
+        #title{ width:100%; height:600px; overflow: hidden;
+            position: relative; }
+        /* video{width: 100%;position: relative; z-index:1;} */
+        /* h1{position: absolute; z-index:10;
+            left: 350px; top: 400px; font-size: 70px; color: white;}
+        h2{position: absolute; z-index: 10;
+            left: 350px; top:500px; font-size: 60px; color: white} */
+        #txt{ position: absolute; left:350px; top:250px;}
+        h1{ font-size:70px; color:white;    }
+        h2{ font-size:30px; color:white;    }
+    </style>
+</head>
+<body>
+    <!-- header, nav, section, article, aside, footer, address -->
+    <div id = "title">
+    <video src = "images/killer1.mp4" muted autoplay loop"></video>
+    <div id="txt">
+    <h1>유부녀 킬러 (A Bona fide Killer)</h1>
+    <h2> 김재한 편집 완료</h2>
+    </div>
+</div>
+</body>
+</html>
+
+<!-- position을 부모태그에도 설정해 줘야 함. 부모태그는 relative로 설정해야 함. z-index는 여러개가 겹칠 때,
+어떤 것이 위, 아래로 갈지 순서 결정하는 속성. 숫자가 클수록 맨 위, 없거나 작을수록 아래 위치, top 400은 위쪽에서 400 밑에, left는 왼쪽에서 350,4
+여러개를 옮길 때는 한줄, 한줄로 하는 것보다 div로 감싸서 이동하는 것이 좋음. 위에서 참조표시된 곳은 스타일 적용문구가 추가되기 전의 적용문구임 -->
