@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> *{margin: 0; padding: 0;}
+        /* div{width: 300px; height: 200px; border: 10px solid black;}
+        #d01{padding: 50px;} */
+        ul{width: 1000px;height: 40px;
+        list-style: none; border: 2px solid black;
+        margin: 0 auto; display: flex;}
+        li{width: 200px; height: 40px; background: yellow; 
+            text-align: center; line-height: 40px; font-size: 20px;
+        border: 1px solid black; box-sizing: border-box;}
+        .c1{background: green;}
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li class="c1">사과</li>
+        <li>복숭아</li>
+        <li>포도</li>
+        <li>참외</li>
+        <li class="c1">수박</li>
+
+    </ul>
+
+    <!-- <div id = "d01">
+
+
+    </div>
+    <hr>
+    <div id = "d02">
+
+    </div> -->
+</body>
+</html>
+
+<!-- 아랫 박스의 크기는 300너비 + 줄 넓이 10+10 = 320, 윗 박스의 너비는 300+10+10+50+50 = 420으로 설정됨.
+박스크기에는 margin은 포함되지 않음
+전체 박스 너비에 비해서 안에 있는 작은 박스들의 전체 너비합계가 초과되면 초과되는 부분이 아래로 배치 -> 
+전체 박스 너비를 조정해야 함(추가, 삭제될때마다 계속 작업 필요) -> **** box-sizing:border-box로 하면 자동으로 너비를 조정해줌(설정하지 않으면
+content-box로 정함)
+(작은 박스의 합이 전체보다 작으면, 조정해 주어야 함 -> 너비를 %로 정하든지, space-between)-->

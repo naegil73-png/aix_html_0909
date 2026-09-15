@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css2/style.css">
+
+
+    <title>포레스트 뉴스</title>
+
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="header-inner">
+
+            <div class="logo">
+                FOREST RESOM
+            </div>
+
+            <nav class="nav">
+                <a href="#">포레스트</a>
+                <a href="#">스파</a>
+                <a href="#">객실</a>
+                <a href="#">특별한 경험</a>
+                <a href="#">부대시설</a>
+                <a href="#">브랜드소개</a>
+            </nav>
+
+            <a href="#" class="reservation">
+                예약하기
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         상단 이미지
+    ========================== -->
+
+    <section class="visual">
+
+        <div>
+            <h1>NEWS</h1>
+            <p>포레스트의 새로운 소식을 만나보세요</p>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         뉴스
+    ========================== -->
+
+    <main class="news-wrap">
+
+        <!-- 경로 -->
+
+        <div class="breadcrumb">
+            HOME
+            <span>›</span>
+            포레스트
+            <span>›</span>
+            뉴스
+        </div>
+
+
+        <!-- 제목 -->
+
+        <h2 class="news-title">
+            뉴스
+        </h2>
+
+
+        <!-- 검색 -->
+
+        <div class="search-box">
+
+            <select id="searchType">
+                <option value="all">전체</option>
+                <option value="title">제목</option>
+                <option value="resort">리조트</option>
+            </select>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="검색어를 입력해주세요."
+            >
+
+            <button
+                type="button"
+                class="search-btn"
+                onclick="searchBoard()"
+            >
+                검색
+            </button>
+
+        </div>
+
+
+        <!-- 게시판 -->
+
+        <div class="board">
+
+            <div class="board-row board-header">
+
+                <div>번호</div>
+                <div>제목</div>
+                <div>리조트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>16</div>
+
+                <div class="title">
+                    <a href="#">
+                        조식 메뉴 개편 및 이용요금 변경 안내
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>15</div>
+
+                <div class="title">
+                    <a href="#">
+                        유아용 웨건 원더폴드 대여 서비스
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>14</div>
+
+                <div class="title">
+                    <a href="#">
+                        리솜 프리미엄 LA 갈비 세트 출시
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>13</div>
+
+                <div class="title">
+                    <a href="#">
+                        2025 사진공모전 수상작 발표
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>12</div>
+
+                <div class="title">
+                    <a href="#">
+                        사우나 및 스파 전 시설 휴장 안내
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>11</div>
+
+                <div class="title">
+                    <a href="#">
+                        리솜리조트 CCM 인증 획득 안내
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>10</div>
+
+                <div class="title">
+                    <a href="#">
+                        해브나인 스파 아쿠아슈즈 필수착용 안내
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>9</div>
+
+                <div class="title">
+                    <a href="#">
+                        제1회 호반 시그니처 메뉴 경진대회 개최
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+
+            <div class="board-row">
+
+                <div>8</div>
+
+                <div class="title">
+                    <a href="#">
+                        눈부시게 푸르른 날 사진공모전
+                    </a>
+                </div>
+
+                <div>포레스트</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 페이지 번호 -->
+
+        <div class="pagination">
+
+            <a href="#">«</a>
+            <a href="#">‹</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">›</a>
+            <a href="#">»</a>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-menu">
+
+                <a href="#">회사소개</a>
+                <a href="#">오시는 길</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">이용약관</a>
+                <a href="#">이메일무단수집거부</a>
+
+            </div>
+
+            <div class="footer-info">
+
+                포레스트 리솜<br>
+                충청북도 제천시 백운면 금봉로 365<br>
+                대표번호 : 043-649-6000
+                &nbsp;&nbsp;
+                예약문의 : 1600-0060
+
+            </div>
+
+            <div class="copyright">
+
+                COPYRIGHT © FOREST RESOM. ALL RIGHTS RESERVED.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         검색 JavaScript
+    ========================== -->
+
+    <script>
+
+        function searchBoard() {
+
+            const input =
+                document.getElementById("searchInput").value
+                .trim()
+                .toLowerCase();
+
+            const rows =
+                document.querySelectorAll(".board-row:not(.board-header)");
+
+            if (input === "") {
+
+                rows.forEach(function(row) {
+                    row.style.display = "grid";
+                });
+
+                return;
+            }
+
+
+            rows.forEach(function(row) {
+
+                const title =
+                    row.querySelector(".title").innerText.toLowerCase();
+
+                const resort =
+                    row.children[2].innerText.toLowerCase();
+
+                if (
+                    title.includes(input) ||
+                    resort.includes(input)
+                ) {
+
+                    row.style.display = "grid";
+
+                } else {
+
+                    row.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        document
+            .getElementById("searchInput")
+            .addEventListener("keyup", function(event) {
+
+                if (event.key === "Enter") {
+                    searchBoard();
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>
+
+<!-- AI로 작성한 소스
+https://www.resom.co.kr/forest/blog/news_list.asp 
+1.위 소스를 분석해서 
+2.위와 유사한 사이트 html소스를 생성해줘. 
+상단에 이미지는 꼭 들어가야 해.
+-->

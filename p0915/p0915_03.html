@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style> *{margin: 0; padding: 0;}
+        section{width: 800px; height: 800px; border: 1px solid black;
+        }
+        div{width: 100px; height: 100px;
+        border: 3px solid black; box-sizing: border-box;}
+        #i2{position: relative; left: 200px; top:100px;}
+        #i5{position: relative; left: 500px; top:-300px;}
+        /* 처음에 있는 위치점을 기준으로 왼쪽에서 200만큼 이동(오른쪽으로 가면 +, 왼쪽은 -) */
+        #i3{position: relative; right: 30px;}
+        #i4{position: absolute; left: 400px; top:0;}
+
+    </style>
+</head>
+<body>
+    <section>
+        <!-- 현재 section의 position이 없음-> body의 position(0.0)을 따름 -->
+        <div id="i1">1</div>
+        <div id="i2">2</div>
+        <div id="i3">3</div>
+        <div id="i4">4</div>
+        <div id="i5">5</div>
+        <div id="i6">6</div>
+        <div id="i7">7</div>
+    </section>
+</body>
+</html>
+
+<!-- div는 의미없는 기본 박스(빈박스), section은 의미가 있는 박스(주스박스)
+postion은 static, relative(현재있는 자리 기준점), absolute(부모가 있는 자리 기준점), fixed(body에 기준)
+relative는 현재에 있는 자리 기준,
+absolute는 부모의 기준점 기준임. 부모에 postion 기준이 없으면, 그 위의 부모 position 기준을 따름
+만약, section을 움직이면, 안의 자식태그 내용도 같이 움직임(부모가 움직이면, 자식도 움직임) -->

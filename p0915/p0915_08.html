@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input{background: yellow;} */
+        input[type='text']{background: yellow;}
+
+    </style>
+</head>
+<body>
+    
+    <input type="checkbox" name="hobby" id="game" value="게임">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id="golf" value="골프">
+    <label for="golf">골프</label>
+    <input type="checkbox" name="hobby" id="swim" value="수영">
+    <label for="swim">수영</label>
+    <br>
+    <button type="button" onclick="chkBtn()">확인</button>
+    <br>
+    <script>
+        function chkBtn(){
+            // alert()
+            var count = document.querySelectorAll('input[name="hobby"]:checked').length;
+            alert("개수:"+count)
+        }
+        /* 이름이 hobby인 것 다 가져와. type="text"....도 가능*/
+    </script>
+    <input type ="text"><br>
+    <input type ="password"><br>
+    <input type ="email"><br>
+    <input type ="search"><br>
+
+</body>
+</html>
+
+
+
+<!-- 선택자는 잘 알아둬야 함.
+상위선택자, 하위선택자가 있음. 상위선택자 > 하위선택자 (같은 명칭의 하위선택자가 많을 때, 이렇게 표시하면, 하나만 선택해줌. )
+인접선택자 : 인접한 것만 선택해줌.
+속성은 [ ]로 표시함-->

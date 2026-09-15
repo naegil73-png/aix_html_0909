@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style> *{margin: 0; padding: 0;}
+        section{width: 800px; height: 3000px; border: 1px solid black;
+        }
+        div{width: 100px; height: 100px;
+        border: 3px solid black; box-sizing: border-box;}
+        #i1{position: fixed; left: 900px; top: 600px; 
+            border-radius: 50%; text-align: center;
+            font-size: 30px; font-weight: 700; line-height: 90px;     border-radius: 50px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            background-color: #fff;}
+            a{color:inherit; text-decoration: none;}       
+        #i1:hover{background: gray; color: white;}
+        #i3{visibility:hidden;}
+        #i5{display:none;}
+        #i4{position: relative; background: green; z-index: 10;}
+        #i6{position: relative; top:-50px; background: yellow;z-index: 3;}
+        /* 겹치는 것 중에서 앞에 위치시키려면 z-index로 조정, 값이 클수록 앞으로 옴, position값이 있는 경우에만 설정 가능함 */
+
+    </style>
+</head>
+
+<body>
+    <section id = "s1">
+        <!-- 현재 section의 position이 없음-> body의 position(0.0)을 따름 -->
+        <a href = "#s1"><div id="i1"><i class="fa-solid fa-arrow-up"></i></div>
+        <div id="i2">2</div>
+        <div id="i3">3</div>
+        <div id="i4">4</div>
+        <div id="i5">5</div>
+        <div id="i6">6</div>
+        <div id="i7">7</div>
+    </section>
+</body>
+
+</html>
+
+<!-- fixed하면, 스크롤해도 그자리에 있음, 링크, 그림자 및 양식 넣기
+위의 링크를 제시하면, 이 페이지에서 링크 주소를 이용할 것으로 계산, 아래의 i class에서 제시한 것이 링크에서 제시하는 것에 포함된 경우 반환
+i는 아이콘을 표시하는 테그, -->
