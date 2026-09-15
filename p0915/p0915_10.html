@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 300px;height: 300px;
+        border: 3px solid black;
+        overflow:hidden;
+    }
+        
+        /* img{width: 300px;height: 300;
+        } */
+        /* .box{width: 300px; transition: all 3s;} 1초 동안 움직임 */
+        /* .box:hover{transform: translate(100px);} */
+        .box:hover{transform: scale(1.5);} /*1.5초 동안 확대됨*/
+    </style>
+</head>
+<body>
+    <img class="box" src="images/a1.webp">
+</body>
+</html>
+
+
+<!-- scale transform 
+transform.rotate(회전하는 것)
+transform에는 이동, 회전, 확대, 축소 4가지가 있고, transform.translate,-
+애니메이션과 같이 사용하는 게 좋음
+->

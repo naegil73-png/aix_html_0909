@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{width: 1000px; height: 40px; margin: 0 auto;
+        display:flex; list-style: none;
+        box-sizing: border-box;}
+        li{height: 40px; text-align: center;}
+        li:after{
+            content:"|";
+            color:red;
+            margin:0 20px;
+        }
+        li:last-child:after{
+            content:"";
+            margin: 0;
+        }
+        /* after를 적용하면 li박스 뒷쪽에 |가 나타나고, before하면 앞에 나타남, content:"" 내용을 제거
+                p:first-child 첫번째 자식 요소 스타일 적용, p:last-child 마지막 자식 요소 스타일 적용*/
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>사과</li>
+        <li>복숭아</li>
+        <li>참외</li>
+        <li>수박</li>
+        <li>바나나</li>
+    </ul>
+</body>
+</html>

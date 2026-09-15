@@ -7,12 +7,23 @@
     <style>
         /* input{background: yellow;} */
         input[type='text']{background: yellow;}
-
+        inoput:checked+label{color:red; font-weight: 700;}
+        ul li{width: 120px; height: 60px; border: 1px solid black;}
+        ul li:nth-child(2){background: yellow;}
+        ul li:nth-of-type(4){background: yellow;} /*동일한 부류 중에 n번째(4번째) 아이를 찾는 것, 
+        p:first-child 첫번째 자식 요소 스타일 적용, p:last-child 마지막 자식 요소 스타일 적용*/
     </style>
 </head>
 <body>
     
-    <input type="checkbox" name="hobby" id="game" value="게임">
+    <ul>
+        <li>사과</li>
+        <p>멍충이</p>
+        <li>배</li>
+        <li>복숭아</li>
+        <li>수박</li>
+    </ul>
+    <!-- <input type="checkbox" name="hobby" id="game" value="게임">
     <label for="game">게임</label>
     <input type="checkbox" name="hobby" id="golf" value="골프">
     <label for="golf">골프</label>
@@ -26,13 +37,13 @@
             // alert()
             var count = document.querySelectorAll('input[name="hobby"]:checked').length;
             alert("개수:"+count)
-        }
+        } -->
         /* 이름이 hobby인 것 다 가져와. type="text"....도 가능*/
-    </script>
+    <!-- </script>
     <input type ="text"><br>
     <input type ="password"><br>
     <input type ="email"><br>
-    <input type ="search"><br>
+    <input type ="search"><br> -->
 
 </body>
 </html>
