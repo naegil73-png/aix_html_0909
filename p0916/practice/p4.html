@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FOREST RESOM | 포레스트 리솜</title>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family:
+                "Noto Sans KR",
+                "Malgun Gothic",
+                Arial,
+                sans-serif;
+
+            color: #222;
+
+            line-height: 1.6;
+
+            background: #fff;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        button {
+            font-family: inherit;
+
+            cursor: pointer;
+        }
+
+
+        img {
+            display: block;
+
+            width: 100%;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 100;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+
+        .header-inner {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            height: 90px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .logo a {
+            display: block;
+
+            font-size: 25px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .logo span {
+            display: block;
+
+            font-size: 13px;
+
+            color: #777;
+
+            letter-spacing: 4px;
+        }
+
+
+        /* NAV */
+
+        .nav {
+            display: flex;
+
+            gap: 35px;
+        }
+
+
+        .nav a {
+            position: relative;
+
+            font-size: 15px;
+
+            color: #333;
+        }
+
+
+        .nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -8px;
+
+            width: 0;
+
+            height: 1px;
+
+            background: #222;
+
+            transition: 0.3s;
+        }
+
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* RESERVATION */
+
+        .reservation-btn {
+            padding: 12px 25px;
+
+            border: 1px solid #222;
+
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        .reservation-btn:hover {
+            background: #555;
+        }
+
+
+        /* =========================
+           MAIN VISUAL
+        ========================= */
+
+        .main-visual {
+            position: relative;
+
+            height: 750px;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .main-visual::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.1),
+                    rgba(0,0,0,0.35)
+                );
+        }
+
+
+        .visual-text {
+            position: absolute;
+
+            z-index: 2;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+
+            text-align: center;
+
+            color: #fff;
+        }
+
+
+        .visual-text .small-title {
+            font-size: 17px;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .visual-text h1 {
+            font-size: 64px;
+
+            font-weight: 500;
+
+            letter-spacing: 8px;
+        }
+
+
+        .visual-text p {
+            margin-top: 20px;
+
+            font-size: 19px;
+
+            font-weight: 300;
+        }
+
+
+        .visual-more {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding: 13px 35px;
+
+            border: 1px solid #fff;
+
+            color: #fff;
+
+            transition: 0.3s;
+        }
+
+
+        .visual-more:hover {
+            background: #fff;
+
+            color: #222;
+        }
+
+
+        /* =========================
+           COMMON
+        ========================= */
+
+        .section {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            margin: 0 auto;
+
+            padding: 110px 0;
+        }
+
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-title h2 {
+            font-size: 40px;
+
+            font-weight: 500;
+
+            letter-spacing: -2px;
+        }
+
+
+        .section-title p {
+            margin-top: 12px;
+
+            color: #777;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            background: #fff;
+        }
+
+
+        .intro-content {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .intro-image {
+            height: 500px;
+
+            overflow: hidden;
+        }
+
+
+        .intro-image img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .intro-text h3 {
+            font-size: 32px;
+
+            font-weight: 500;
+
+            line-height: 1.4;
+        }
+
+
+        .intro-text h3 span {
+            font-weight: 700;
+        }
+
+
+        .intro-text p {
+            margin-top: 25px;
+
+            color: #777;
+
+            font-size: 15px;
+
+            line-height: 2;
+        }
+
+
+        .detail-btn {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 12px 28px;
+
+            border: 1px solid #222;
+
+            font-size: 14px;
+        }
+
+
+        .detail-btn:hover {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           FACILITIES
+        ========================= */
+
+        .facilities {
+            background: #f7f7f5;
+        }
+
+
+        .facility-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .facility-card {
+            position: relative;
+
+            height: 390px;
+
+            overflow: hidden;
+
+            color: #fff;
+        }
+
+
+        .facility-card img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+
+        .facility-card:hover img {
+            transform: scale(1.05);
+        }
+
+
+        .facility-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,0.6),
+                    transparent 55%
+                );
+        }
+
+
+        .facility-text {
+            position: absolute;
+
+            z-index: 2;
+
+            left: 30px;
+
+            bottom: 30px;
+        }
+
+
+        .facility-text h3 {
+            font-size: 25px;
+
+            font-weight: 500;
+        }
+
+
+        .facility-text p {
+            margin-top: 5px;
+
+            font-size: 14px;
+
+            color: #eee;
+        }
+
+
+        /* =========================
+           SPA
+        ========================= */
+
+        .spa {
+            position: relative;
+
+            min-height: 550px;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .spa::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background: rgba(0,0,0,0.35);
+        }
+
+
+        .spa-content {
+            position: relative;
+
+            z-index: 2;
+
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            min-height: 550px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            color: #fff;
+        }
+
+
+        .spa-text {
+            width: 500px;
+        }
+
+
+        .spa-text .small-title {
+            font-size: 14px;
+
+            letter-spacing: 4px;
+        }
+
+
+        .spa-text h2 {
+            margin-top: 15px;
+
+            font-size: 48px;
+
+            font-weight: 400;
+        }
+
+
+        .spa-text p {
+            margin-top: 20px;
+
+            color: #eee;
+
+            font-size: 15px;
+
+            line-height: 2;
+        }
+
+
+        .spa-btn {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 13px 30px;
+
+            border: 1px solid #fff;
+        }
+
+
+        .spa-btn:hover {
+            background: #fff;
+
+            color: #222;
+        }
+
+
+        /* =========================
+           NEWS
+        ========================= */
+
+        .news-list {
+            border-top: 2px solid #222;
+        }
+
+
+        .news-item {
+            display: grid;
+
+            grid-template-columns: 100px 1fr 150px;
+
+            align-items: center;
+
+            min-height: 70px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .news-number {
+            text-align: center;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        .news-title {
+            font-size: 15px;
+        }
+
+
+        .news-title:hover {
+            text-decoration: underline;
+        }
+
+
+        .news-date {
+            text-align: center;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        .news-more {
+            text-align: center;
+
+            margin-top: 35px;
+        }
+
+
+        .news-more a {
+            display: inline-block;
+
+            padding: 12px 30px;
+
+            border: 1px solid #222;
+        }
+
+
+        .news-more a:hover {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           RESERVATION
+        ========================= */
+
+        .reservation-section {
+            background: #f5f3ee;
+        }
+
+
+        .reservation-box {
+            text-align: center;
+        }
+
+
+        .reservation-box h2 {
+            font-size: 35px;
+
+            font-weight: 500;
+        }
+
+
+        .reservation-box p {
+            margin-top: 15px;
+
+            color: #777;
+        }
+
+
+        .reservation-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+
+        .reservation-buttons a {
+            min-width: 150px;
+
+            padding: 14px 25px;
+
+            border: 1px solid #222;
+        }
+
+
+        .reservation-buttons a:first-child {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        .footer-inner {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            margin: 0 auto;
+
+            padding: 55px 0;
+
+            display: flex;
+
+            gap: 80px;
+        }
+
+
+        .footer-logo {
+            font-size: 20px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .footer-info {
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+
+        .footer-info p {
+            margin-bottom: 5px;
+        }
+
+
+        .copyright {
+            margin-top: 15px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+
+            .header-inner {
+                height: auto;
+
+                padding: 20px 0;
+
+                flex-wrap: wrap;
+
+                gap: 20px;
+            }
+
+
+            .nav {
+                order: 3;
+
+                width: 100%;
+
+                gap: 15px;
+
+                overflow-x: auto;
+            }
+
+
+            .nav a {
+                white-space: nowrap;
+
+                font-size: 13px;
+            }
+
+
+            .main-visual {
+                height: 600px;
+            }
+
+
+            .visual-text h1 {
+                font-size: 38px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .visual-text p {
+                font-size: 15px;
+            }
+
+
+            .section {
+                padding: 70px 0;
+            }
+
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+
+            .intro-content {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            .intro-image {
+                height: 350px;
+            }
+
+
+            .intro-text h3 {
+                font-size: 27px;
+            }
+
+
+            .facility-list {
+                grid-template-columns: 1fr;
+            }
+
+
+            .facility-card {
+                height: 350px;
+            }
+
+
+            .spa-content {
+                min-height: 500px;
+            }
+
+
+            .spa-text {
+                width: 100%;
+            }
+
+
+            .spa-text h2 {
+                font-size: 38px;
+            }
+
+
+            .news-item {
+                grid-template-columns: 50px 1fr 90px;
+            }
+
+
+            .news-title {
+                font-size: 13px;
+            }
+
+
+            .news-date {
+                font-size: 11px;
+            }
+
+
+            .reservation-buttons {
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+
+            .footer-inner {
+                display: block;
+            }
+
+
+            .footer-info {
+                margin-top: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                FOREST
+
+                <span>RESOM</span>
+
+            </a>
+
+        </div>
+
+
+        <nav class="nav">
+
+            <a href="#intro">
+                포레스트
+            </a>
+
+            <a href="#spa">
+                스파
+            </a>
+
+            <a href="#facilities">
+                객실
+            </a>
+
+            <a href="#facilities">
+                특별한 경험
+            </a>
+
+            <a href="#facilities">
+                부대시설
+            </a>
+
+            <a href="#news">
+                뉴스
+            </a>
+
+        </nav>
+
+
+        <button
+            class="reservation-btn"
+            onclick="location.href='#reservation'"
+        >
+            예약하기
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN VISUAL
+========================= -->
+
+<section class="main-visual">
+
+
+    <div class="visual-text">
+
+
+        <div class="small-title">
+            FOREST RESOM
+        </div>
+
+
+        <h1>
+            자연 속의 휴식
+        </h1>
+
+
+        <p>
+            숲과 함께하는 특별한 힐링 여행
+        </p>
+
+
+        <a
+            href="#intro"
+            class="visual-more"
+        >
+            더 알아보기
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section
+    class="intro"
+    id="intro"
+>
+
+
+    <div class="section">
+
+
+        <div class="section-title">
+
+            <h2>
+                FOREST RESOM
+            </h2>
+
+            <p>
+                자연과 함께하는 특별한 휴식 공간
+            </p>
+
+        </div>
+
+
+
+        <div class="intro-content">
+
+
+            <div class="intro-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80"
+                    alt="숲속 리조트"
+                >
+
+            </div>
+
+
+
+            <div class="intro-text">
+
+                <h3>
+
+                    일상에서 벗어나
+
+                    <br>
+
+                    <span>
+                        자연을 만나는 시간
+                    </span>
+
+                </h3>
+
+
+                <p>
+
+                    푸른 숲과 맑은 공기 속에서
+                    편안한 휴식을 경험해보세요.
+
+                    <br>
+
+                    다양한 객실과 스파,
+                    식음시설을 통해
+
+                    <br>
+
+                    가족과 연인,
+                    소중한 사람들과 함께하는
+                    특별한 시간을 제공합니다.
+
+                </p>
+
+
+                <a
+                    href="#facilities"
+                    class="detail-btn"
+                >
+                    리조트 둘러보기
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FACILITIES
+========================= -->
+
+<section
+    class="facilities"
+    id="facilities"
+>
+
+
+    <div class="section">
+
+
+        <div class="section-title">
+
+            <h2>
+                SPECIAL EXPERIENCE
+            </h2>
+
+            <p>
+                포레스트 리솜에서 만나는 다양한 경험
+            </p>
+
+        </div>
+
+
+
+        <div class="facility-list">
+
+
+            <!-- CARD 1 -->
+
+            <div class="facility-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1000&q=80"
+                    alt="객실"
+                >
+
+
+                <div class="facility-text">
+
+                    <h3>
+                        객실
+                    </h3>
+
+                    <p>
+                        자연을 바라보며
+                        편안하게 머무는 공간
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div class="facility-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80"
+                    alt="스파"
+                >
+
+
+                <div class="facility-text">
+
+                    <h3>
+                        웰니스 스파
+                    </h3>
+
+                    <p>
+                        몸과 마음을 편안하게
+                        쉬어가는 힐링 공간
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div class="facility-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=80"
+                    alt="다이닝"
+                >
+
+
+                <div class="facility-text">
+
+                    <h3>
+                        다이닝
+                    </h3>
+
+                    <p>
+                        특별한 미식 경험을
+                        즐겨보세요
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     SPA
+========================= -->
+
+<section
+    class="spa"
+    id="spa"
+>
+
+
+    <div class="spa-content">
+
+
+        <div class="spa-text">
+
+
+            <div class="small-title">
+                WELLNESS
+            </div>
+
+
+            <h2>
+                HEAVEN9
+            </h2>
+
+
+            <p>
+
+                자연 속에서 몸과 마음을
+                편안하게 쉬어갈 수 있는
+
+                <br>
+
+                특별한 웰니스 공간을
+                경험해보세요.
+
+            </p>
+
+
+            <a
+                href="#"
+                class="spa-btn"
+            >
+                자세히 보기
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     NEWS
+========================= -->
+
+<section
+    class="news"
+    id="news"
+>
+
+
+    <div class="section">
+
+
+        <div class="section-title">
+
+            <h2>
+                NEWS
+            </h2>
+
+            <p>
+                포레스트 리솜의 새로운 소식을 만나보세요.
+            </p>
+
+        </div>
+
+
+
+        <div class="news-list">
+
+
+            <div class="news-item">
+
+                <div class="news-number">
+                    10
+                </div>
+
+
+                <a
+                    href="news_view.html"
+                    class="news-title"
+                >
+                    조식 메뉴 개편 및 이용요금 변경 안내
+                </a>
+
+
+                <div class="news-date">
+                    2026.08.24
+                </div>
+
+            </div>
+
+
+
+            <div class="news-item">
+
+                <div class="news-number">
+                    9
+                </div>
+
+
+                <a
+                    href="news_view.html"
+                    class="news-title"
+                >
+                    헤브나인 웰니스 스파 운영시간 안내
+                </a>
+
+
+                <div class="news-date">
+                    2026.08.20
+                </div>
+
+            </div>
+
+
+
+            <div class="news-item">
+
+                <div class="news-number">
+                    8
+                </div>
+
+
+                <a
+                    href="news_view.html"
+                    class="news-title"
+                >
+                    여름 시즌 객실 패키지 안내
+                </a>
+
+
+                <div class="news-date">
+                    2026.08.15
+                </div>
+
+            </div>
+
+
+
+            <div class="news-item">
+
+                <div class="news-number">
+                    7
+                </div>
+
+
+                <a
+                    href="news_view.html"
+                    class="news-title"
+                >
+                    더그릴720 신규 메뉴 출시 안내
+                </a>
+
+
+                <div class="news-date">
+                    2026.08.10
+                </div>
+
+            </div>
+
+
+
+            <div class="news-item">
+
+                <div class="news-number">
+                    6
+                </div>
+
+
+                <a
+                    href="news_view.html"
+                    class="news-title"
+                >
+                    사우나 시설 이용 안내
+                </a>
+
+
+                <div class="news-date">
+                    2026.08.05
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="news-more">
+
+            <a href="news_list.html">
+                뉴스 전체보기
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     RESERVATION
+========================= -->
+
+<section
+    class="reservation-section"
+    id="reservation"
+>
+
+
+    <div class="section">
+
+
+        <div class="reservation-box">
+
+
+            <h2>
+                자연 속에서 특별한 하루
+            </h2>
+
+
+            <p>
+                포레스트 리솜에서 소중한 시간을
+                시작해보세요.
+            </p>
+
+
+            <div class="reservation-buttons">
+
+
+                <a href="#">
+                    객실 예약
+                </a>
+
+
+                <a href="#">
+                    스파 예약
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+
+    <div class="footer-inner">
+
+
+        <div class="footer-logo">
+            FOREST RESOM
+        </div>
+
+
+        <div class="footer-info">
+
+            <p>
+                포레스트 리솜 |
+                충청북도 제천시 백운면 금봉로 365
+            </p>
+
+
+            <p>
+                대표전화 043-649-6000
+            </p>
+
+
+            <p>
+                객실예약 1600-0060
+            </p>
+
+
+            <p class="copyright">
+                © FOREST RESOM. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+</body>
+
+</html>

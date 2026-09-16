@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>뉴스 | FOREST RESOM</title>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family:
+                "Noto Sans KR",
+                "Malgun Gothic",
+                Arial,
+                sans-serif;
+
+            color: #222;
+
+            line-height: 1.6;
+
+            background: #fff;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            width: 100%;
+
+            background: #fff;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .header-inner {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            height: 90px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo a {
+            font-size: 25px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .logo span {
+            display: block;
+
+            font-size: 13px;
+
+            color: #777;
+
+            letter-spacing: 4px;
+        }
+
+
+        .nav {
+            display: flex;
+
+            gap: 35px;
+        }
+
+
+        .nav a {
+            font-size: 15px;
+
+            color: #333;
+        }
+
+
+        .nav a:hover {
+            color: #777;
+        }
+
+
+        .reservation-btn {
+            padding: 12px 25px;
+
+            border: 1px solid #222;
+
+            background: #222;
+
+            color: #fff;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           VISUAL
+        ========================= */
+
+        .visual {
+            height: 330px;
+
+            background-image:
+                url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+
+            position: relative;
+        }
+
+
+        .visual-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            color: #fff;
+        }
+
+
+        .visual-overlay h1 {
+            font-size: 40px;
+
+            letter-spacing: 5px;
+        }
+
+
+        .visual-overlay p {
+            margin-top: 10px;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .container {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            margin: 0 auto;
+
+            padding: 70px 0 120px;
+        }
+
+
+        /* =========================
+           BREADCRUMB
+        ========================= */
+
+        .breadcrumb {
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        .breadcrumb strong {
+            color: #222;
+        }
+
+
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
+        .page-title {
+            margin-bottom: 50px;
+        }
+
+
+        .page-title h2 {
+            font-size: 42px;
+
+            font-weight: 600;
+
+            letter-spacing: -2px;
+        }
+
+
+        .page-title p {
+            margin-top: 10px;
+
+            color: #777;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-box {
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .search-box select {
+            width: 120px;
+
+            height: 48px;
+
+            padding: 0 12px;
+
+            border: 1px solid #ddd;
+        }
+
+
+        .search-box input {
+            width: 400px;
+
+            height: 48px;
+
+            padding: 0 15px;
+
+            border: 1px solid #ddd;
+
+            border-left: 0;
+
+            outline: none;
+        }
+
+
+        .search-box button {
+            width: 90px;
+
+            height: 48px;
+
+            border: 0;
+
+            background: #222;
+
+            color: #fff;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           BOARD TOP
+        ========================= */
+
+        .board-top {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+        }
+
+
+        .board-top p {
+            font-size: 14px;
+
+            color: #555;
+        }
+
+
+        .write-btn {
+            padding: 10px 22px;
+
+            border: 1px solid #222;
+
+            background: #222;
+
+            color: #fff;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           BOARD
+        ========================= */
+
+        .board {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            border-top: 2px solid #222;
+        }
+
+
+        .board th {
+            height: 55px;
+
+            background: #f7f7f7;
+
+            border-bottom: 1px solid #ddd;
+
+            font-size: 14px;
+        }
+
+
+        .board td {
+            height: 58px;
+
+            text-align: center;
+
+            border-bottom: 1px solid #eee;
+
+            font-size: 14px;
+        }
+
+
+        .board th:nth-child(1) {
+            width: 100px;
+        }
+
+
+        .board th:nth-child(3) {
+            width: 150px;
+        }
+
+
+        .board th:nth-child(4) {
+            width: 150px;
+        }
+
+
+        .board .subject {
+            text-align: left;
+
+            padding-left: 20px;
+        }
+
+
+        .board .subject a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           PAGINATION
+        ========================= */
+
+        .pagination {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 5px;
+
+            margin-top: 40px;
+        }
+
+
+        .pagination a {
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid #eee;
+
+            font-size: 13px;
+        }
+
+
+        .pagination a.active {
+            background: #222;
+
+            border-color: #222;
+
+            color: #fff;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        .footer-inner {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            margin: 0 auto;
+
+            padding: 45px 0;
+
+            display: flex;
+
+            gap: 80px;
+        }
+
+
+        .footer-logo {
+            font-size: 20px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .footer-info {
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+
+        .footer-info p {
+            margin-bottom: 5px;
+        }
+
+
+        .copyright {
+            margin-top: 15px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .header-inner {
+                height: auto;
+
+                padding: 20px 0;
+
+                flex-wrap: wrap;
+
+                gap: 20px;
+            }
+
+
+            .nav {
+                order: 3;
+
+                width: 100%;
+
+                gap: 15px;
+
+                overflow-x: auto;
+            }
+
+
+            .nav a {
+                white-space: nowrap;
+
+                font-size: 13px;
+            }
+
+
+            .visual {
+                height: 250px;
+            }
+
+
+            .visual-overlay h1 {
+                font-size: 28px;
+            }
+
+
+            .container {
+                padding: 45px 0 80px;
+            }
+
+
+            .page-title h2 {
+                font-size: 32px;
+            }
+
+
+            .search-box input {
+                width: calc(100% - 180px);
+            }
+
+
+            .board th:nth-child(1),
+            .board td:nth-child(1) {
+                display: none;
+            }
+
+
+            .board th:nth-child(3),
+            .board td:nth-child(3) {
+                width: 90px;
+            }
+
+
+            .board th:nth-child(4),
+            .board td:nth-child(4) {
+                width: 90px;
+            }
+
+
+            .board td {
+                font-size: 12px;
+            }
+
+
+            .board .subject {
+                padding-left: 5px;
+            }
+
+
+            .footer-inner {
+                display: block;
+            }
+
+
+            .footer-info {
+                margin-top: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+
+        <div class="logo">
+
+            <a href="news_list.html">
+
+                FOREST
+
+                <span>RESOM</span>
+
+            </a>
+
+        </div>
+
+
+        <nav class="nav">
+
+            <a href="#">포레스트</a>
+
+            <a href="#">스파</a>
+
+            <a href="#">객실</a>
+
+            <a href="#">특별한 경험</a>
+
+            <a href="#">부대시설</a>
+
+            <a href="#">브랜드소개</a>
+
+        </nav>
+
+
+        <button class="reservation-btn">
+            예약하기
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- VISUAL -->
+
+<section class="visual">
+
+    <div class="visual-overlay">
+
+        <h1>FOREST RESOM</h1>
+
+        <p>
+            자연 속에서 만나는 특별한 휴식
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTENT -->
+
+<main class="container">
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <a href="#">HOME</a>
+
+        <span>›</span>
+
+        <a href="#">포레스트</a>
+
+        <span>›</span>
+
+        <strong>뉴스</strong>
+
+    </div>
+
+
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        <h2>뉴스</h2>
+
+        <p>
+            포레스트 리솜의 다양한 소식을 만나보세요.
+        </p>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <select id="searchType">
+
+            <option value="all">전체</option>
+
+            <option value="title">제목</option>
+
+            <option value="resort">리조트</option>
+
+        </select>
+
+
+        <input
+            type="text"
+            id="searchKeyword"
+            placeholder="검색어를 입력해주세요."
+        >
+
+
+        <button onclick="searchBoard()">
+            검색
+        </button>
+
+    </div>
+
+
+
+    <!-- BOARD -->
+
+    <section class="board-section">
+
+
+        <div class="board-top">
+
+            <p>
+                전체 <strong>10</strong>건
+            </p>
+
+
+            <button
+                class="write-btn"
+                onclick="location.href='news_write.html'"
+            >
+                글쓰기
+            </button>
+
+        </div>
+
+
+
+        <table class="board">
+
+
+            <thead>
+
+                <tr>
+
+                    <th>번호</th>
+
+                    <th>제목</th>
+
+                    <th>리조트</th>
+
+                    <th>등록일</th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="boardBody">
+
+
+                <tr>
+
+                    <td>10</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            조식 메뉴 개편 및 이용요금 변경 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.08.24</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>9</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            헤브나인 웰니스 스파 운영시간 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.08.20</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>8</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            여름 시즌 객실 패키지 안내
+                        </a>
+
+                    </td>
+
+                    <td>레스트리</td>
+
+                    <td>2026.08.15</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>7</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            더그릴720 신규 메뉴 출시 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.08.10</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>6</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            사우나 시설 이용 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.08.05</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>5</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            세미나 및 연회장 이용 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.07.30</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>4</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            객실 예약 관련 안내사항
+                        </a>
+
+                    </td>
+
+                    <td>레스트리</td>
+
+                    <td>2026.07.25</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            분양 상담 및 문의 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.07.20</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            리조트 이용요금 변경 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.07.15</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td class="subject">
+
+                        <a href="news_view.html">
+                            포레스트 리솜 이용 안내
+                        </a>
+
+                    </td>
+
+                    <td>포레스트</td>
+
+                    <td>2026.07.10</td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+            <a href="#" class="active">1</a>
+
+            <a href="#">2</a>
+
+            <a href="#">3</a>
+
+            <a href="#">4</a>
+
+            <a href="#">5</a>
+
+            <a href="#">›</a>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+
+        <div class="footer-logo">
+            FOREST RESOM
+        </div>
+
+
+        <div class="footer-info">
+
+            <p>
+                포레스트 리솜 |
+                충청북도 제천시 백운면 금봉로 365
+            </p>
+
+            <p>
+                대표전화 043-649-6000
+            </p>
+
+            <p class="copyright">
+                © FOREST RESOM. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    function searchBoard() {
+
+        const type =
+            document.getElementById("searchType").value;
+
+        const keyword =
+            document
+                .getElementById("searchKeyword")
+                .value
+                .trim()
+                .toLowerCase();
+
+
+        if (!keyword) {
+
+            alert("검색어를 입력해주세요.");
+
+            return;
+        }
+
+
+        const rows =
+            document.querySelectorAll("#boardBody tr");
+
+
+        rows.forEach(function(row) {
+
+            const title =
+                row.children[1]
+                    .textContent
+                    .toLowerCase();
+
+
+            const resort =
+                row.children[2]
+                    .textContent
+                    .toLowerCase();
+
+
+            let target;
+
+
+            if (type === "title") {
+
+                target = title;
+
+            } else if (type === "resort") {
+
+                target = resort;
+
+            } else {
+
+                target =
+                    title + " " + resort;
+
+            }
+
+
+            if (target.includes(keyword)) {
+
+                row.style.display = "";
+
+            } else {
+
+                row.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px; background: blue;
+        animation : ract 1.5s infinite alternate, background 1.5s infinite alternate;}
+
+        @keyframes ract{
+            from{transform: translate(0px) rotate(0deg);}
+            to{transform: translate(500px) rotate(180deg);}}
+        
+
+        @keyframes background{
+            from{background: blue;}
+            50%{background: green;}
+            to{background: red; border-radius: 50%;}
+
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+
+<!-- div {
+            width: 200px; height: 200px;
+            /* 애니메이션 이름을 하나로 줄여줍니다 */
+            animation: moveAndChange 1.5s infinite alternate;
+        }
+
+        /* 하나의 keyframes 안에 움직임과 색상/모양 변화를 모두 넣습니다 */
+        @keyframes moveAndChange {
+            from {
+                transform: translate(0px) rotate(0deg);
+                background: blue;
+            }
+            50% {
+                background: green;
+            }
+            to {
+                transform: translate(500px) rotate(180deg);
+                background: red;
+                border-radius: 50%;
+            }
+        } 애니메이션을 이렇게 하나로 묶어서 쓸 수도 있음 -->

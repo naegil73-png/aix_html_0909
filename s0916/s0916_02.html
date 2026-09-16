@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "d01"></div>
+    <div id = "d02">몫</div>
+    <div id = "d03">나머지</div>
+    <script>
+        //  타입 : str, int, float, boolean, defined(정의되지 않음), null(값이 없는)
+        // 형변환 : Number(), parseInt(), parseFloat(), toString()
+        document.getElementById("d01").innerText = 10/3;
+        document.getElementById("d02").value = "몫:"+parseInt(10/3);
+        document.getElementById("d03").innerText = "나머지:"+10%3;
+
+        var a = 10;
+        var b = 3;
+        var result = a>b? 'a가 더 큽니다.':'b가 더 큽니다.'
+        // 조건식은 조건식? 다음에 결과-맞을 경우, 아닐 경우
+        //출력하는 방법 : console.log, document.write, alert.confirm, prompt
+        console.log('콘솔:'+result)
+        document.write("화면에 출력이 됩니다."+result);
+        alert(result);//경고장
+        if(confirm("프로그램을 종료하시겠습니까?")){
+            console.log("네");
+        }else{
+            console.log('아니요')
+        }
+        
+        var num = prompt("값 입력");
+        console.log("숫자"+num)
+
+    </script>
+</body>
+</html>
+
+<!-- 몫은 구하는 식이 없으므로 정수로 변환해서 구함
+자바스크립트에서는 숫자+문자도 가능, 하지만, 숫자도 문자로 전환됨
+var A = ++B :1을 증가시켜서 계산하라. B++은 B에 1을 더하는 것. B=5일 때, A = 6, 뒤는 A=5, B=6,
+논리연산자에서 and연산자는 &&임. or연산자는 ||임,
+var result=a>b> "javascript":"hello" -> 참이면 자바, 거짓이면 헬로 -->

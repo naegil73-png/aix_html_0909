@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>학생 성적 관리</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+            background: #f5f6f8;
+            color: #333;
+        }
+
+        /* 전체 영역 */
+        .container {
+            width: 1100px;
+            max-width: calc(100% - 40px);
+            margin: 50px auto;
+        }
+
+        /* 제목 */
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        /* =========================
+           입력 영역
+        ========================= */
+
+        .input-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .input-box h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333;
+        }
+
+        .form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form input {
+            width: 130px;
+            height: 42px;
+            padding: 0 10px;
+
+            border: 1px solid #ccc;
+            border-radius: 4px;
+
+            font-size: 14px;
+        }
+
+        .form input:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .form input[type="number"] {
+            width: 100px;
+        }
+
+        .add-btn {
+            width: 100px;
+            height: 42px;
+
+            border: none;
+            border-radius: 4px;
+
+            background: #333;
+            color: white;
+
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .add-btn:hover {
+            background: #555;
+        }
+
+
+        /* =========================
+           리스트 영역
+        ========================= */
+
+        .list-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .list-box h2 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333;
+        }
+
+        /* 테이블 */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: white;
+            height: 48px;
+            font-size: 14px;
+        }
+
+        td {
+            height: 48px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* 삭제 버튼 */
+
+        .delete-btn {
+            padding: 6px 12px;
+
+            border: none;
+            border-radius: 3px;
+
+            background: #e74c3c;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        /* 빈 데이터 */
+
+        .empty {
+            padding: 50px;
+            color: #999;
+        }
+
+
+        /* =========================
+           반응형
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .form {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form input,
+            .form input[type="number"],
+            .add-btn {
+                width: 100%;
+            }
+
+            .table-wrap {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 850px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <h1>학생 성적 관리</h1>
+
+
+    <!-- =========================
+         상단 입력 영역
+    ========================= -->
+
+    <div class="input-box">
+
+        <h2>학생 성적 입력</h2>
+
+        <div class="form">
+
+            <!-- 번호 -->
+            <input
+                type="number"
+                id="studentNo"
+                placeholder="번호"
+            >
+
+            <!-- 이름 -->
+            <input
+                type="text"
+                id="studentName"
+                placeholder="이름"
+            >
+
+            <!-- 국어 -->
+            <input
+                type="number"
+                id="kor"
+                placeholder="국어"
+                min="0"
+                max="100"
+            >
+
+            <!-- 영어 -->
+            <input
+                type="number"
+                id="eng"
+                placeholder="영어"
+                min="0"
+                max="100"
+            >
+
+            <!-- 수학 -->
+            <input
+                type="number"
+                id="math"
+                placeholder="수학"
+                min="0"
+                max="100"
+            >
+
+            <!-- 입력 버튼 -->
+            <button
+                class="add-btn"
+                onclick="addStudent()"
+            >
+                학생 입력
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         하단 리스트 영역
+    ========================= -->
+
+    <div class="list-box">
+
+        <h2>학생 성적 리스트</h2>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>국어</th>
+                        <th>영어</th>
+                        <th>수학</th>
+                        <th>합계</th>
+                        <th>평균</th>
+                        <th>등수</th>
+                        <th>관리</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentList">
+
+                    <tr id="emptyRow">
+
+                        <td colspan="9" class="empty">
+                            입력된 학생이 없습니다.
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // 학생 데이터를 저장하는 배열
+    let students = [];
+
+
+    // =========================
+    // 학생 입력
+    // =========================
+
+    function addStudent() {
+
+        // 입력값 가져오기
+        const no =
+            document.getElementById("studentNo").value;
+
+        const name =
+            document.getElementById("studentName").value;
+
+        const kor =
+            Number(document.getElementById("kor").value);
+
+        const eng =
+            Number(document.getElementById("eng").value);
+
+        const math =
+            Number(document.getElementById("math").value);
+
+
+        // 입력값 검사
+        if (no === "") {
+
+            alert("번호를 입력해주세요.");
+            return;
+
+        }
+
+        if (name === "") {
+
+            alert("이름을 입력해주세요.");
+            return;
+
+        }
+
+        if (
+            document.getElementById("kor").value === "" ||
+            document.getElementById("eng").value === "" ||
+            document.getElementById("math").value === ""
+        ) {
+
+            alert("모든 점수를 입력해주세요.");
+            return;
+
+        }
+
+
+        // 점수 범위 검사
+        if (
+            kor < 0 || kor > 100 ||
+            eng < 0 || eng > 100 ||
+            math < 0 || math > 100
+        ) {
+
+            alert("점수는 0~100점 사이로 입력해주세요.");
+            return;
+
+        }
+
+
+        // 합계
+        const total = kor + eng + math;
+
+
+        // 평균
+        const avg = total / 3;
+
+
+        // 학생 객체 생성
+        const student = {
+
+            no: Number(no),
+            name: name,
+            kor: kor,
+            eng: eng,
+            math: math,
+            total: total,
+            avg: avg
+
+        };
+
+
+        // 배열에 학생 추가
+        students.push(student);
+
+
+        // 화면에 출력
+        displayStudents();
+
+
+        // 입력창 초기화
+        document.getElementById("studentNo").value = "";
+        document.getElementById("studentName").value = "";
+        document.getElementById("kor").value = "";
+        document.getElementById("eng").value = "";
+        document.getElementById("math").value = "";
+
+    }
+
+
+    // =========================
+    // 학생 리스트 출력
+    // =========================
+
+    function displayStudents() {
+
+        const tbody =
+            document.getElementById("studentList");
+
+
+        // 기존 내용 삭제
+        tbody.innerHTML = "";
+
+
+        // 평균을 기준으로 높은 순서 정렬
+        const sortedStudents =
+            [...students].sort(function(a, b) {
+
+                return b.total - a.total;
+
+            });
+
+
+        // 등수 계산
+        sortedStudents.forEach(function(student, index) {
+
+            student.rank = index + 1;
+
+        });
+
+
+        // 학생 출력
+        sortedStudents.forEach(function(student) {
+
+            const tr =
+                document.createElement("tr");
+
+
+            tr.innerHTML = `
+
+                <td>${student.no}</td>
+
+                <td>${student.name}</td>
+
+                <td>${student.kor}</td>
+
+                <td>${student.eng}</td>
+
+                <td>${student.math}</td>
+
+                <td>${student.total}</td>
+
+                <td>${student.avg.toFixed(2)}</td>
+
+                <td>${student.rank}</td>
+
+                <td>
+                    <button
+                        class="delete-btn"
+                        onclick="deleteStudent(${student.no})"
+                    >
+                        삭제
+                    </button>
+                </td>
+
+            `;
+
+
+            tbody.appendChild(tr);
+
+        });
+
+
+        // 학생이 없는 경우
+        if (students.length === 0) {
+
+            tbody.innerHTML = `
+
+                <tr>
+
+                    <td colspan="9" class="empty">
+                        입력된 학생이 없습니다.
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+    }
+
+
+    // =========================
+    // 학생 삭제
+    // =========================
+
+    function deleteStudent(no) {
+
+        if (!confirm("학생 정보를 삭제하시겠습니까?")) {
+
+            return;
+
+        }
+
+
+        students =
+            students.filter(function(student) {
+
+                return student.no !== no;
+
+            });
+
+
+        displayStudents();
+
+    }
+
+</script>
+
+
+</body>
+</html>

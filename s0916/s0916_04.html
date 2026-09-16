@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>현재잔액</h2>
+    <h2 id = "money">2000000</h2>
+    <input type="text" name="num" id = "num"><br>
+    <button type="button" onclick="btn()">확인</button>
+    <script>
+        // 버튼을 누르면,
+        // id num input박스에 입력한 숫자
+    function btn(){
+        var money = document.getElementById("money").innerText;
+        console.log("머니:",money)
+        // var num = Number(document.getElementById("num").value);
+        // alert(num);
+    }
+    if (num>10){
+        alert("10보다 큰 수입니다.");}else{
+            ("10보다 작은 수입니다.")
+    }
+    </script>
+</body>
+</html>
+
+
+
+<!-- onclick = 'btn()'-> btn함수를 호출하라. 스크립트언어는 조건식, 값 계산, 결과값에 맞는 명령문 실행
+
+숫자를 가져오는 방법 : input으로 입력하든지-> document.getElementById().value로, 
+일반문에서는 document.getElementById().innerText로 가져옴 없음-->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="n1" id = "n1"><br> 
+    <!-- 문자를 입력 -->
+    <input type="text" name="n2" id = "n2"><br>
+    <input type="text" name="n3" id = "n3"><br>
+    <button type="button" onclick="btn()">확인</button><br>
+    <h2>결과</h2>
+    <div id ="d01"></div>
+    <script>
+        function btn(){
+            //alert("확인")
+            // 
+            let a = Number(document.getElementById("n1").value);
+            // 계산 및 대소비교 등을 위해 숫자로 변환
+            let b = Number(document.getElementById("n2").value);
+            let c = Number(document.getElementById("n3").value);
+            result = n1>n2?(n1>n3?n1:n2):(n2>n3?n1:n2);
+            // 대소비교
+            document.getElementById("d01").innerText=result;
+            console.log("결과:"+result)
+        }
+
+    </script>
+</body>
+</html>

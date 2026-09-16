@@ -1,0 +1,102 @@
+<!-- 자바스크립트 -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" name="id" id = "id" value="이순신"> <!-- script가 없으면, 이순신이 입력됨. -->
+    <!-- <script>
+        document.getElementById("id").value="홍길동";
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            
+    var name = "유관순"; //변수선언 - 옛날버전
+    let name2 = "강감찬"; //변수선언 - 최근버전
+    const name3 = "김구"; //상수 : 처음값을 변경할 수 없음
+    name4 = "김유신"
+    console.log("이름:"+name4);
+
+    function btn(){
+    document.getElementById("id").value="홍길동";
+        }
+
+    </script>
+    <input type="text" name="id" id = "id" value="이순신"> 
+    <button type="button" onclick="btn()">버튼</button>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            
+    var name = "유관순"; //변수선언 - 옛날버전
+    let name2 = "강감찬"; //변수선언 - 최근버전
+    const name3 = "김구"; //상수 : 처음값을 변경할 수 없음
+    name4 = "김유신"
+    console.log("이름:"+name4);
+
+    function btn(){
+        alert(document.getElementById("d01").innerText);
+    // document.getElementById("id").value="홍길동";
+    kor = document.getElementById("kor").value;
+    eng = document.getElementById("eng").value;
+    math = document.getElementById("math").value;
+    total = document.getElementById("total").value = Number(kor)+Number(eng)+parseInt(math) //숫자변환은 Number 또는 parseInt
+        }
+    //이식은 total이 값을 할당할 변수와 어느 위치에 속하는 지를 같이 보여주는 것으로 경로를 제시하는 것이 좋음 
+    </script>
+    <div id ="d01"> 85 </div>
+    <label>국어</label>
+    <input type="text" name="kor" id = "kor"> <br>
+    <label>영어</label>
+    <input type="text" name="eng" id = "eng"> <br>
+    <label>수학</label>
+    <input type="text" name="math" id = "math"> <br>
+    <button type="button" onclick="btn()">저장</button>
+    <br>
+    <label>합계</label>
+    <input type="text" name="total" id = "total" value = "kor+eng+math"> 
+
+
+</body>
+</html>
+
+<!-- input에는 value가 없음. value로 가져와야 함. input아니면, 그외 모든 태그는 innerText로 읽어야 함(문자로 읽음)
+
+문자형 변환 
+Number
+toString
+Boolean
+
+숫자형 다른 타입변환
+parseInt
+parseFloat
+Number
+-->

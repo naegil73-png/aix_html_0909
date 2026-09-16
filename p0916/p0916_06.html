@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; font-size: 60px; text-align: center;}
+        .nav{height: 200px;background: skyblue;}
+        .cont{float:left;height: 600px; width: 60%; background: yellow; image{width: 100%; overflow: hidden;}
+        .aside{float:left;height:600px; width: 40%; background: green;}
+        .footer{clear:both;height: 300px; background: pink;}
+
+    </style>
+</head>
+<body>
+    <div class="nav">상단메뉴부분</div>
+    <div class="cont"><img src="images/a1.jpg"> </div>
+    <div class="aside">사이드바부분</div>
+    <div class="footer"></div>
+    </body>
+</html>
+
+/* <!-- 크기를 px로 하면, 반응형으로 할 수 없음. 메뉴, 화면이 가려져서 나옴 -> %로 해야 함: 가변형 그리드
+글자 크기도 px이 아닌 em으로 사용함. 1em = 16px임. 즉, 글자크기 / 16px임 --> */

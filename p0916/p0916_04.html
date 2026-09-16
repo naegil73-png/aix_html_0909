@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px; margin:100px; background: red;
+        animation: ract 1.5s infinite alternate; background: 1.5s infinite alternate;}
+
+        @keyframes ract{
+            from{transform:translate(0px) rotateX;}
+            transition-duration{transform:translate(500);}
+        }
+
+        @keyframes background{
+            from{background: red;}
+            50%{background: green;}
+            to{background: blue; border-radius: 50%;}
+        
+        
+        /* div{width: 200px; height: 200px; margin:100px; background: red;
+        animation: ract 1.5s infinite alternate;}
+        @keyframes ract{
+            from{transform:perspective(120px) rotateX('0deg') rotateY('0deg');}
+            50%{transform: perspective(120px) rotateX('-180deg') rotateY('0deg');
+            to{transform: perspective(120px) rotateX('-100deg') rotateY('-180deg');}
+        }
+
+        @keyframes background{
+            from{background: red; transform:scale(1);}
+            50%{background: green; tansform:scale(2);}
+            to{background: blue; transform:scale(3);}}
+        } */
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width:200px; height:200px; margin:100px;
+            background:red;
+        animation: ract 1.5s infinite alternate, background 1.5s infinite alternate;
+        }
+        /* ract: 애니메이션 이름, background: 두번째 애니메이션, 애니메이션 동작시간 이후 지연시간 추가 가능
+        racgt->background 애니메이션 동작. 아래는 각 애니메이션에 대한  */
+        @keyframes ract{
+            from{transform: translate(0px) rotate(0deg);}
+            to{transform: translate(500px) rotate(360deg);}
+        }
+
+        @keyframes background{
+            from{background: red;  }
+            50%{background: green; }
+            to{background: blue; border-radius: 50%;}
+        }
+        /*
+        @keyframes ract{
+            from{transform: perspective(200px) rotateX(0deg) rotateY(0deg);}
+            50%{transform: perspective(200px) rotateX(-180deg) rotateY(0deg);}
+            to{transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);}
+        }
+
+        @keyframes background{
+            from{background: red; }
+            50%{background: green; }
+            to{background: blue;}
+        }
+        */
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

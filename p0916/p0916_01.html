@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 500px; margin: 0 auto;}
+        img{width: 300px; /*backface-visibility: hidden;*/
+        /* transition: all 1s;} */
+        transition-property:width,height;
+        transition-duration:1s,2s;
+        /* transition-property: all, 너비, 높이 등으로 줄수 있음 */
+        /* img{width: 300px;
+        transition: all 1s;} */
+        /* skew : 기울기 */
+        .c1:hover{width: 400px; height: 400px;}
+        /* .c1:hover{transform: skewX(45deg); transform:perspective(300);} transform:perspective는 애니메이션에 유용 */
+        /* .c2:hover{transform: skewY(45deg); transform-origin: left top;} */
+        /* .c3:hover{transform: skew(45deg,20deg);} */
+
+        /* rotate : 회전 */
+        /* .c1:hover{transform: rotateX(45deg); transform:perspective(300);} /*transform:perspective는 애니메이션에 유용*/
+        /* .c2:hover{transform: rotateY(45deg);}
+        .c3:hover{transform: rotate(45deg);} */
+        /* .c3:hover{transform: rotate(45deg); transform-origin: left top;} */
+        /* .c3:hover{transform: scale(2); perspective(120px) rotateX(180deg);} */
+        .c2:hover{transform: rotateY(180deg);} 
+        .c3:hover{transform: perspective(100deg) rotateY(180deg);} 
+        /* perspective: 입체감, 낮을수록 입체감이 큼 */
+
+        /* .c1:hover{transform: scaleX(1.5);}
+        .c2:hover{transform: scaleY(1.5);}
+        .c3:hover{transform: scale(1.5);} */
+        /* 모양 변화 시, 어느축을 중심으로  */
+        /* .c1:hover{transform: translateX(100px);}
+        .c2:hover{transform: translateY(50px);}
+        .c3:hover{transform: translate(50px,50px);} */
+        /* 위는 이동 */
+    </style>
+</head>
+<body>
+    <img class="c1" src="images/1.png"><br><br>
+    <img class="c2" src="images/1.png"><br><br>
+    <img class="c3" src="images/1.png"><br><br>
+</body>
+</html>
+
+<!-- 변형은 중앙을 기준점으로 움직이나, transform-origin으로 기준점 변경 가능 -->

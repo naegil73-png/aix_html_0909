@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>글쓰기 | FOREST RESOM</title>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+
+        body {
+            font-family:
+                "Noto Sans KR",
+                "Malgun Gothic",
+                Arial,
+                sans-serif;
+
+            color: #222;
+
+            line-height: 1.6;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        input,
+        select,
+        textarea,
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .header-inner {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            height: 90px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo a {
+            font-size: 25px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .logo span {
+            display: block;
+
+            font-size: 13px;
+
+            color: #777;
+
+            letter-spacing: 4px;
+        }
+
+
+        .nav {
+            display: flex;
+
+            gap: 35px;
+        }
+
+
+        .nav a {
+            font-size: 15px;
+        }
+
+
+        .reservation-btn {
+            padding: 12px 25px;
+
+            border: 1px solid #222;
+
+            background: #222;
+
+            color: #fff;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           VISUAL
+        ========================= */
+
+        .visual {
+            height: 330px;
+
+            background:
+                url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=80")
+                center / cover;
+
+            position: relative;
+        }
+
+
+        .visual-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            color: #fff;
+        }
+
+
+        .visual-overlay h1 {
+            font-size: 40px;
+
+            letter-spacing: 5px;
+        }
+
+
+        .visual-overlay p {
+            margin-top: 10px;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            margin: 0 auto;
+
+            padding: 70px 0 120px;
+        }
+
+
+        /* =========================
+           BREADCRUMB
+        ========================= */
+
+        .breadcrumb {
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+
+            color: #888;
+
+            font-size: 13px;
+        }
+
+
+        .breadcrumb strong {
+            color: #222;
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .page-title {
+            margin-bottom: 50px;
+        }
+
+
+        .page-title h2 {
+            font-size: 42px;
+
+            font-weight: 600;
+        }
+
+
+        .page-title p {
+            margin-top: 10px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           WRITE
+        ========================= */
+
+        .write-box {
+            border-top: 2px solid #222;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .form-row {
+            display: flex;
+
+            align-items: center;
+
+            min-height: 70px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        .form-row:last-child {
+            border-bottom: 0;
+        }
+
+
+        .form-row label {
+            width: 160px;
+
+            padding-left: 20px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        .form-row input,
+        .form-row select {
+            width: 100%;
+
+            height: 45px;
+
+            padding: 0 12px;
+
+            border: 1px solid #ddd;
+
+            outline: none;
+        }
+
+
+        .form-row textarea {
+            width: 100%;
+
+            height: 250px;
+
+            margin: 15px 0;
+
+            padding: 12px;
+
+            border: 1px solid #ddd;
+
+            outline: none;
+
+            resize: vertical;
+        }
+
+
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            border-color: #222;
+        }
+
+
+        .content-row {
+            align-items: flex-start;
+        }
+
+
+        .content-row label {
+            padding-top: 25px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .form-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 40px;
+        }
+
+
+        .form-buttons button {
+            min-width: 110px;
+
+            height: 45px;
+
+            cursor: pointer;
+
+            border: 1px solid #222;
+        }
+
+
+        .submit-btn {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        .reset-btn {
+            background: #fff;
+
+            color: #222;
+        }
+
+
+        .cancel-btn {
+            background: #fff;
+
+            color: #222;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #222;
+
+            color: #fff;
+        }
+
+
+        .footer-inner {
+            width: 1200px;
+
+            max-width: calc(100% - 40px);
+
+            margin: 0 auto;
+
+            padding: 45px 0;
+
+            display: flex;
+
+            gap: 80px;
+        }
+
+
+        .footer-logo {
+            font-size: 20px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .footer-info {
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+
+        .copyright {
+            margin-top: 15px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .header-inner {
+                height: auto;
+
+                padding: 20px 0;
+
+                flex-wrap: wrap;
+
+                gap: 20px;
+            }
+
+
+            .nav {
+                order: 3;
+
+                width: 100%;
+
+                gap: 15px;
+
+                overflow-x: auto;
+            }
+
+
+            .nav a {
+                white-space: nowrap;
+
+                font-size: 13px;
+            }
+
+
+            .visual {
+                height: 250px;
+            }
+
+
+            .visual-overlay h1 {
+                font-size: 28px;
+            }
+
+
+            .container {
+                padding: 45px 0 80px;
+            }
+
+
+            .page-title h2 {
+                font-size: 32px;
+            }
+
+
+            .form-row {
+                display: block;
+
+                padding: 15px 0;
+            }
+
+
+            .form-row label {
+                display: block;
+
+                width: 100%;
+
+                padding: 0;
+
+                margin-bottom: 8px;
+            }
+
+
+            .content-row label {
+                padding: 0;
+            }
+
+
+            .footer-inner {
+                display: block;
+            }
+
+
+            .footer-info {
+                margin-top: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+
+        <div class="logo">
+
+            <a href="news_list.html">
+
+                FOREST
+
+                <span>RESOM</span>
+
+            </a>
+
+        </div>
+
+
+        <nav class="nav">
+
+            <a href="#">포레스트</a>
+
+            <a href="#">스파</a>
+
+            <a href="#">객실</a>
+
+            <a href="#">특별한 경험</a>
+
+            <a href="#">부대시설</a>
+
+            <a href="#">브랜드소개</a>
+
+        </nav>
+
+
+        <button class="reservation-btn">
+            예약하기
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- VISUAL -->
+
+<section class="visual">
+
+    <div class="visual-overlay">
+
+        <h1>FOREST RESOM</h1>
+
+        <p>
+            자연 속에서 만나는 특별한 휴식
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTENT -->
+
+<main class="container">
+
+
+    <!-- BREADCRUMB -->
+
+    <div class="breadcrumb">
+
+        <a href="news_list.html">
+            HOME
+        </a>
+
+        <span>›</span>
+
+        <a href="news_list.html">
+            포레스트
+        </a>
+
+        <span>›</span>
+
+        <strong>글쓰기</strong>
+
+    </div>
+
+
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        <h2>글쓰기</h2>
+
+        <p>
+            포레스트 리솜의 새로운 소식을 등록해주세요.
+        </p>
+
+    </div>
+
+
+
+    <!-- WRITE FORM -->
+
+    <form
+        id="writeForm"
+        class="write-box"
+    >
+
+
+        <!-- 리조트 -->
+
+        <div class="form-row">
+
+            <label for="resort">
+                리조트
+            </label>
+
+
+            <select
+                id="resort"
+                required
+            >
+
+                <option value="">
+                    선택해주세요
+                </option>
+
+                <option value="포레스트">
+                    포레스트
+                </option>
+
+                <option value="레스트리">
+                    레스트리
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- 제목 -->
+
+        <div class="form-row">
+
+            <label for="title">
+                제목
+            </label>
+
+
+            <input
+                type="text"
+                id="title"
+                placeholder="제목을 입력해주세요."
+                required
+            >
+
+        </div>
+
+
+
+        <!-- 작성자 -->
+
+        <div class="form-row">
+
+            <label for="writer">
+                작성자
+            </label>
+
+
+            <input
+                type="text"
+                id="writer"
+                placeholder="작성자를 입력해주세요."
+                required
+            >
+
+        </div>
+
+
+
+        <!-- 안내 분야 -->
+
+        <div class="form-row">
+
+            <label for="category">
+                안내 분야
+            </label>
+
+
+            <select
+                id="category"
+                required
+            >
+
+                <option value="">
+                    선택해주세요
+                </option>
+
+                <option>
+                    제천 리솜리조트
+                </option>
+
+                <option>
+                    헤브나인 웰니스 스파
+                </option>
+
+                <option>
+                    더그릴720
+                </option>
+
+                <option>
+                    사우나
+                </option>
+
+                <option>
+                    세미나
+                </option>
+
+                <option>
+                    연회
+                </option>
+
+                <option>
+                    객실 예약
+                </option>
+
+                <option>
+                    분양 안내
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- 내용 -->
+
+        <div class="form-row content-row">
+
+            <label for="content">
+                내용
+            </label>
+
+
+            <textarea
+                id="content"
+                placeholder="게시글 내용을 입력해주세요."
+                required
+            ></textarea>
+
+        </div>
+
+
+
+        <!-- 이미지 -->
+
+        <div class="form-row">
+
+            <label for="image">
+                이미지
+            </label>
+
+
+            <input
+                type="file"
+                id="image"
+                accept="image/*"
+            >
+
+        </div>
+
+
+    </form>
+
+
+
+    <!-- BUTTON -->
+
+    <div class="form-buttons">
+
+
+        <button
+            type="submit"
+            form="writeForm"
+            class="submit-btn"
+        >
+            등록
+        </button>
+
+
+        <button
+            type="reset"
+            form="writeForm"
+            class="reset-btn"
+        >
+            다시쓰기
+        </button>
+
+
+        <button
+            type="button"
+            class="cancel-btn"
+            onclick="location.href='news_list.html'"
+        >
+            취소
+        </button>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+
+        <div class="footer-logo">
+            FOREST RESOM
+        </div>
+
+
+        <div class="footer-info">
+
+            <p>
+                포레스트 리솜 |
+                충청북도 제천시 백운면 금봉로 365
+            </p>
+
+            <p>
+                대표전화 043-649-6000
+            </p>
+
+            <p class="copyright">
+                © FOREST RESOM. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    document
+        .getElementById("writeForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const resort =
+                    document
+                        .getElementById("resort")
+                        .value;
+
+
+                const title =
+                    document
+                        .getElementById("title")
+                        .value
+                        .trim();
+
+
+                const writer =
+                    document
+                        .getElementById("writer")
+                        .value
+                        .trim();
+
+
+                const category =
+                    document
+                        .getElementById("category")
+                        .value;
+
+
+                const content =
+                    document
+                        .getElementById("content")
+                        .value
+                        .trim();
+
+
+                if (!resort) {
+
+                    alert(
+                        "리조트를 선택해주세요."
+                    );
+
+                    return;
+                }
+
+
+                if (!title) {
+
+                    alert(
+                        "제목을 입력해주세요."
+                    );
+
+                    return;
+                }
+
+
+                if (!writer) {
+
+                    alert(
+                        "작성자를 입력해주세요."
+                    );
+
+                    return;
+                }
+
+
+                if (!category) {
+
+                    alert(
+                        "안내 분야를 선택해주세요."
+                    );
+
+                    return;
+                }
+
+
+                if (!content) {
+
+                    alert(
+                        "내용을 입력해주세요."
+                    );
+
+                    return;
+                }
+
+
+                alert(
+                    "게시글이 등록되었습니다."
+                );
+
+
+                location.href =
+                    "news_list.html";
+
+            }
+        );
+
+</script>
+
+
+</body>
+
+</html>
