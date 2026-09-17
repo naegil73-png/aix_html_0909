@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th,td{width:80px; height:40px; }
+    </style>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="이름입력">
+    <input type="text" name="kor" id="kor" placeholder="국어점수입력">
+    <input type="text" name="eng" id="kor" placeholder="국어점수입력">
+    <input type="text" name="kor" id="kor" placeholder="국어점수입력">
+    <br>
+    <button type="button" onclick="saveBtn()">저장</button>
+
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>총점</th>
+            <th>평균</th>
+            <th>등수</th>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script>
+        var arr = ['홍길동','유관순','이순신'];
+        var arr_k = [100,90,80];
+        var arr_t = [100,90,80];
+        var arr_r = []
+        function saveBtn(){
+            var nlist = Number(document.getElementById("tbody"));
+            var name = Number(document.getElementById("name").value);
+            var kor = Number(document.getElementById("kor").value);
+            var total = Number(document.getElementById("kor").value);
+            var avg = Number(document.getElementById("kor").value);
+            var rank = Number(document.getElementById("rank").value);
+
+            arr_t = 0
+            rank = 1
+            for(i=0;i<3;i++)
+                if(arr_t[i] > arr_t){rank[i] = rank}
+                else if(rank +=1)
+            if(total[0])
+            
+            arr.push(name);
+            arr_k.push(kor);
+            arr_t.push(total);
+            arr_t.push(avg);
+            arr_r.push(rank);
+
+            document.getElementById("name").value = "";
+            console.log(arr);
+            //alert("test")
+            nlist.innerHTML = `<tr><td>${name}</td><td>${kor}</td><td>${total}</td><td>${avg}</td><td>${rank}</td></tr>`+nlist.innerHTML;
+
+        }
+// 두개 이상이 있을 경우, 위치를 지정해 주기 위해 전체 테이블(nlist)가 필요
+
+        var txtHtml = ``;
+        for(var i=0;i<arr.length;i++){
+            txtHtml += `<tr>
+                <td>${arr[i]}</td>
+                <td>${arr_k[i]}</td>
+                </tr>`;
+        }
+        document.getElementById("tbody").innerHTML = txtHtml;
+        /*
+        var arr = [1,2]
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i]+"<br>");
+        }
+        arr.push(10);
+        arr.push(9);
+        arr.push(8);
+        console.log("배열 : ",arr);
+        arr.pop()
+        console.log("배열2 : ",arr);
+
+        console.log("길이 : ",arr.length);
+        */
+    </script>
+</body>
+</html>

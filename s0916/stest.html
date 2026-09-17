@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{width: ;}
+    </style>
 </head>
 <body>
-    <input type = "text" name = "age" id = "age">
-    <button type="button" onclick="btn()">확인</button>
-    
-    <script>
-        function btn(){
-            var num = Number(document.getElementById("age").value);
+    <div id="d01">85</div>
+    <label>국어</label>
+    <input type="text" name="kor" id = "kor"><br>
+    <label>영어</label>
+    <input type="text" name="eng" id = "eng"><br>
+    <label>수학</label>
+    <input type="text" name="math" id = "math"><br>
+    <button type="button" onclick="btn()">계산</button><br>
+    <label>합계</label>
+    <input type="text" name="total" id = "total" value = "kor+eng+math"> 
+    <script> function btn(){
+        k = Number(document.getElementById("kor").value);
+        e = Number(document.getElementById("eng").value);
+        m = Number(document.getElementById("math").value);
+        total = document.getElementById("total").value;
+    }
 
-            if (num>=18){
-            alert("18세 이상 성인입니다.");}
-            else{alert("18세 미만 미성년입니다.")}}
     </script>
 </body>
 </html>
