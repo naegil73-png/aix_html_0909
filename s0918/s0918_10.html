@@ -15,11 +15,31 @@
 
     </style>
     <script>
-        $(function(){
-            
-        })
 
+        $(function(){
+
+        });//제이쿼리
+
+        function saveBtn(){
+            alert('test')
+            $.ajax({
+                url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=yH3oOa54IPvHVoSEUZ7YQPGXyj%2F3hs45bv4lOpijqdIC%2BROJDo%2BAkU7qVixOZpXThikQll1vQon0qDwjJDoHxw%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+                type:"get",
+                data:{},
+                dataType:"json",
+                success:function(data){
+                    alert("성공")
+                    console.log(data.response.body.items.item);
+                    // 서버에서 데이터를 받아서 변수에 저장
+                    students=data.response.body.items.itme;
+                },
+                error:function(){
+                    alert("실패");
+                }
+            })
+        }
     </script>
+
 
 </head>
 <body>
