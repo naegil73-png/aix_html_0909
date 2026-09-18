@@ -5,86 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table,th,td{border:1px solid black; border-collapse: collapse;}
-        th,td{width:80px; height:40px; }
+        table,th,td{ border: 1px solid black; border-collapse: collapse;}
+    th,td{width: 80px; height: 50px; text-align: center;}
     </style>
 </head>
 <body>
-    <input type="text" name="name" id="name" placeholder="이름입력">
-    <input type="text" name="kor" id="kor" placeholder="국어점수입력">
-    <input type="text" name="eng" id="kor" placeholder="국어점수입력">
-    <input type="text" name="kor" id="kor" placeholder="국어점수입력">
-    <br>
-    <button type="button" onclick="saveBtn()">저장</button>
-
+    <input type="text" name="name" id="name" placeholder="이름입력"><br>
+    <input type="text" name="kor" id="kor" placeholder="국어성적"><br>
+    <input type="text" name="eng" id="eng" placeholder="영어성적"><br>
+    <input type="text" name="math" id="math" placeholder="수학성적"><br>
+    <button type="button" onclick="btn()">저장</button><br>
     <table>
         <tr>
             <th>이름</th>
             <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
             <th>총점</th>
             <th>평균</th>
-            <th>등수</th>
         </tr>
         <tbody id="tbody">
 
         </tbody>
     </table>
-    <script>
-        var arr = ['홍길동','유관순','이순신'];
-        var arr_k = [100,90,80];
-        var arr_t = [100,90,80];
-        var arr_r = []
-        function saveBtn(){
-            var nlist = Number(document.getElementById("tbody"));
-            var name = Number(document.getElementById("name").value);
+
+    <script> 
+        var arr = ["홍길동","유관순","이순신"]
+        var arr_kor = [85,95,100]
+        var arr_eng = [87,96,100]
+        var arr_math = [87,96,100]
+        var arr_total = []
+        var arr_avg = []
+
+        for(i=0;i<arr.length;i++){
+            arr_total[i] = arr_kor[i]+arr_eng[i]+arr_math[i]
+            arr_avg[i] = arr_total[i]/3
+        }
+        var nlist = document.getElementById("tbody").innerHTML;
+
+        function btn(){
+            var name = document.getElementById("name").value;
             var kor = Number(document.getElementById("kor").value);
-            var total = Number(document.getElementById("kor").value);
-            var avg = Number(document.getElementById("kor").value);
-            var rank = Number(document.getElementById("rank").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+            var total = kor+eng+math
+            var avg = total/3
 
-            arr_t = 0
-            rank = 1
-            for(i=0;i<3;i++)
-                if(arr_t[i] > arr_t){rank[i] = rank}
-                else if(rank +=1)
-            if(total[0])
+            arr.push(name)
+            arr_kor.push(kor)
+            arr_eng.push(eng)
+            arr_math.push(math)
+            arr_total.push(total)
+            arr_avg.push(avg)
+
+            nlist.innerHTML += `<tr><td>${name}</td><td>${kor}</td><td>${eng}</td><td>${math}</td><td>${total}</td><td>${avg}</td></tr>`
+        }
+        var textHtml = ``
+        for(i=0;i<arr.length;i++){
+            textHtml += `<tr>
+                <td>${arr[i]}</td><td>${arr_kor[i]}</td><td>${arr_eng[i]}</td><td>${arr_math[i]}</td><td>${arr_total[i]}</td><td>${arr_avg[i]}</td></tr>`;}
             
-            arr.push(name);
-            arr_k.push(kor);
-            arr_t.push(total);
-            arr_t.push(avg);
-            arr_r.push(rank);
+        document.getElementById("tbody").innerHTML=textHtml
 
-            document.getElementById("name").value = "";
-            console.log(arr);
-            //alert("test")
-            nlist.innerHTML = `<tr><td>${name}</td><td>${kor}</td><td>${total}</td><td>${avg}</td><td>${rank}</td></tr>`+nlist.innerHTML;
-
-        }
-// 두개 이상이 있을 경우, 위치를 지정해 주기 위해 전체 테이블(nlist)가 필요
-
-        var txtHtml = ``;
-        for(var i=0;i<arr.length;i++){
-            txtHtml += `<tr>
-                <td>${arr[i]}</td>
-                <td>${arr_k[i]}</td>
-                </tr>`;
-        }
-        document.getElementById("tbody").innerHTML = txtHtml;
-        /*
-        var arr = [1,2]
-        for(var i=0;i<arr.length;i++){
-            document.write(arr[i]+"<br>");
-        }
-        arr.push(10);
-        arr.push(9);
-        arr.push(8);
-        console.log("배열 : ",arr);
-        arr.pop()
-        console.log("배열2 : ",arr);
-
-        console.log("길이 : ",arr.length);
-        */
     </script>
 </body>
 </html>

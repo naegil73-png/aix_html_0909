@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <script>
+
+            $(function(){
+                // 약식 제이쿼리 선언 - 함수는 안에서 선언해야 사용할 수 있음
+                // value->val(),innerText->text(),innerHTML->html()
+            $("#title").text("대학성적제이쿼리");
+
+            })
+        // 원래는 이렇게 써야 하나, 약식으로 위의 형식으로 사용 가능. 기본제이쿼리 선언 : 함수는 안에서 선언해야 사용할 수 있음
+        //  $(document).ready(function(){
+            
+        // } -> 현재 화면이 준비되면 함수를 적용시켜라는 의미(화면 전체를 읽고 처리-> 위치에 상관없음).
+    </script>
+</head>
+<body>
+    <!-- 제이쿼리 : 자바스크립트 라이브러리(함수도서관, 자바스크립트에서 자주 쓰는 함수를 모아 놓은 것)
+     $();()안에서 제이쿼리로 찾아줘 -->
+    <h2>학생성적프로그램</h2>
+    <input type="text" name="kor" id="kor"><br>
+    <input type="text" name="eng" id="eng"><br>
+    <input type="text" name="math" id="math"><br>
+    <button type="button" onclick="saveBtn()">저장</button>
+    <div id="d01"></div>
+    <script>
+        /*
+        function saveBtn(){
+            // var kor = document.getElementById("kor").value;
+            // console.log(kor);
+            var kor = $("#kor").val();
+            console.log("kor : "+kor)
+        }*/
+    </script>
+
+    <!-- <button onclick="btn()">확인</button>
+    <button onclick="btn2()">확인</button>
+    <script>
+
+        function btn(){
+            // console.log(this); // this : 자기자신
+            console.log(this.style);
+        }
+        // var sum = 0;
+        // function btn2(){
+        //     alert('sum: '+sum);      
+        
+        // }
+        // function btn(){
+        // sum=0
+        // for(var i=1;i<=100;i++){
+        //     var a = 10;
+        //     if(sum>100){
+        //         break
+        //     }
+        //     sum += i
+        // }
+        // }
+        // document.write("i:"+i+"sum: "+sum+"a: "+a);
+    </script> -->
+</body>
+</html>
+
+<!-- jquery 홈페이지에서 jquery검색해서 주소복사 -->

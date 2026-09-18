@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="id" id ="id">
+    <label>@</label>
+    <input type="text" name="email1" id="email1">
+    <select name="email2" id="email2">
+        <option value="">직접입력</option>
+        <option value="naver.com">naver.com</option>
+        <option value="daum.net">daum.net</option>
+        <option value="gmail.com">gmail.com</option>
+    </select>
+    <script> 
+    // 이벤트리스터 : click, mouseover, mouseout, focus, keydown, scroll, change, blur
+    var select = document.getElementById("email2");
+        select.addEventListener("click",function(){
+            document.getElementById("email1").value=
+            document.getElementById("email2").value;
+            // alert('test');
+            location.href="http://www."+document.getElementById("email2").value; //원하는 페이지로 이동 시, location.href를 사용(회원가입 이후 홈페이지 이동)
+        });
+
+    </script>
+
+
+</body>
+</html>
+
+<!-- input의 값 선택에 따라 내용이 달라지게 하는 작업, 이벤트의 종류 중
+click은 클릭될 때만, change는 변화될 때만.. keydown은 키보드를 쳤을 때-->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 300px; height: 200px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <h2>현재시간</h2>
+    <div id="now"></div>
+    <button type="button" onclick="timer()">현재시간</button>
+
+    <script>
+        var time
+        function timer(){
+            var date = new Date()
+            var y = date.getFullYear()
+            var m = date.getMonth()+1
+            var d = date.getDate()
+            var h = date.getHours()
+            var mi = date.getMinutes()
+            var s = date.getSeconds()
+            today = `${y}년 ${m}월 ${d}일 ${h}:${mi}:${s}`
+            document.getElementById("now").innerText = today
+        }
+        timer()
+        time = setInterval(timer,1000)
+
+    </script>
+
+</body>
+</html>

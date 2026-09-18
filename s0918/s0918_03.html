@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 600px;height: 1000px;
+        border: 1px solid black;}
+        #d01{background: yellow;}
+        #d02{background: green;}
+        #d03{background: pink;}
+        button{width: 40px; height: 40px;
+        border-radius: 50%;
+        position: fixed; left:700px; top: 800px;}
+    </style>
+
+</head>
+<body>
+    <h2 id="top"">앵커태그</h2>
+    <div id="d01">"d01"</div>
+    <div id="d02">"d02"</div>
+    <div id="d03">"d03"</div>
+    <a href="#top">앵커태그</a>
+    <button type="button" onclick="topBtn()">TOP</button>
+    <script>
+        function topBtn(){
+            // alert("test")
+            window.scrollTo({top:0,left:0,behavior:'smooth'});
+        }
+    </script>
+</body>
+</html>
+
+<!-- top을 눌렀을 때, 일시이동, 부드러운 이동 -->

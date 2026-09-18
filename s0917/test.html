@@ -1,87 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table,th,td{border: 1px solid black; border-collapse: collapse;}
-        th,td{width: 180px; height: 40px;}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{ border: 1px solid black; border-collapse: collapse;}
+    th,td{width: 80px; height: 50px; text-align: center;}
+    </style>
 </head>
 <body>
-    <input type="text" name="name" id="name" placeholder="이름 입력">
-    <input type="text" name="kor" id="kor" placeholder="국어 점수 입력">
-    <input type="text" name="eng" id="eng" placeholder="영어 점수 입력">
-    <input type="text" name="math" id="math" placeholder="수학 점수 입력">
-    <br>
-    <button type="button" onclick="saveBtn()">저장</button>
-    <table>
-        <tr>
-            <th>이름</th>
-            <th>국어</th>
-            <th>영어</th>
-            <th>수학</th>
-            <th>합계</th>
-            <th>평균</th>
-        </tr>
-        <tbody id="tbody"></tbody>
-    </table>
+    <input type="text" name="name" id="name" placeholder="이름입력"><br>
+    <input type="text" name="kor" id="kor" placeholder="국어성적"><br>
+    <input type="text" name="eng" id="eng" placeholder="영어성적"><br>
+    <input type="text" name="math" id="math" placeholder="수학성적"><br>
+    <button type="button" onclick="btn()">저장</button><br>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>총점</th>
+            <th>평균</th>
+        </tr>
+        <tbody id="tbody">
 
-    <script>
-        var arr = ['홍길동', '유관순', '이순신'];
-        var arr_k = [100,90,80]
-        var arr_e = [100,90,80]
-        var arr_m = [100,90,80]
-        var arr_t = []
-        var arr_a = []
+        </tbody>
+    </table>
 
+    <script> 
+        var arr = ["홍길동","유관순","이순신"]
+        var arr_kor = [85,95,100]
+        var arr_eng = [87,96,100]
+        var arr_math = [87,96,100]
+        var arr_total = []
+        var arr_avg = []
 
+        for(i=0;i<arr.length;i++){
+            arr_total[i] = arr_kor[i]+arr_eng[i]+arr_math[i]
+            arr_avg[i] = arr_total[i]/3
+        }
+        var nlist = document.getElementById("tbody").innerHTML;
 
-        function saveBtn() {
-            var stulist = document.getElementById("tbody");
-            var name = document.getElementById("name").value;
-            var kor = Number(document.getElementById("kor").value);
-            var eng = Number(document.getElementById("eng").value);
-            var math = Number(document.getElementById("math").value);
-            var total = kor+eng+math
-            var avg = total/3
+        function btn(){
+            var name = document.getElementById("name").value;
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+            var total = kor+eng+math
+            var avg = total/3
 
-            arr.push(name);
-            arr_k.push(kor);
-            arr_e.push(eng);
-            arr_m.push(math);
-            arr_t.push(total);
-            arr_a.push(avg);
+            arr.push(name)
+            arr_kor.push(kor)
+            arr_eng.push(eng)
+            arr_math.push(math)
+            arr_total.push(total)
+            arr_avg.push(avg)
 
-            document.getElementById("name").value = "";
-            document.getElementById("kor").value = "";
-            document.getElementById("eng").value = "";
-            document.getElementById("math").value = "";
+            nlist.innerHTML += `<tr><td>${name}</td><td>${kor}</td><td>${eng}</td><td>${math}</td><td>${total}</td><td>${avg}</td></tr>`
+        }
+        var textHtml = ``
+        for(i=0;i<arr.length;i++){
+            textHtml += `<tr>
+                <td>${arr[i]}</td><td>${arr_kor[i]}</td><td>${arr_eng[i]}</td><td>${arr_math[i]}</td><td>${arr_total[i]}</td><td>${arr_avg[i]}</td></tr>`;}
+            
+        document.getElementById("tbody").innerHTML=textHtml
 
-            stulist.innerHTML += `<tr>
-                <td>${name}</td>
-                <td>${kor}</td>
-                <td>${eng}</td>
-                <td>${math}</td>
-                <td>${total}</td>
-                <td>${avg}</td>
-                </tr>`;
-            }
-
-            var txtHTML = `` ;
-            for (var i=0; i<arr.length; i++){
-                txtHTML += `
-                    <tr>
-                        <td>${arr[i]}</td>
-                        <td>${arr_k[i]}</td>
-                        <td>${arr_e[i]}</td>
-                        <td>${arr_m[i]}</td>
-                        <td>${arr_k[i]+arr_e[i]+arr_m[i]}</td>
-                        <td>${(arr_k[i]+arr_e[i]+arr_m[i])/3}</td>
-                    </tr>
-                `;}
-            document.getElementById("tbody").innerHTML = txtHTML;
-    </script>
+    </script>
 </body>
 </html>

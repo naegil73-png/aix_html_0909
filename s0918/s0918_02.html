@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 5000px; width: 3000px; background: yellow;}
+        #d01{width: 200px; height: 200px;
+        position: fixed; background: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="d01"></div>
+    <script>
+        // 스크롤 높이 확인 객체
+        // 이벤트 : click, change, scoll
+        window.addEventListener('scroll',function(){
+            // 스크롤 할 때마다 함수를 실행함.
+        
+
+        // * 모니터 화면 사이즈 확인 객체 - innerHeight, innerWidth
+        // html body 사이즈 확인
+        // var height = window.innerHeight; //모니터화면 세로사이즈
+        // var width = window.innerWidth; //모니터홤녀 가로사이즈
+        var scrollTop = document.documentElement.scrollTop;
+        var scrollleft = document.documentElement.scrollLeft;
+        document.getElementById("d01").innerText =
+        // = `화면세로사이즈: ${height}
+        // 화면가로사이즈: ${width}
+        `y축으로 스크롤한 거리:${scrollTop}
+        x축으로 스크롤한 거리:${scrollleft}`});
+    </script>
+</body>
+</html>
+
+<!-- 화면에 맞는 사이즈 컨텐츠 관련 -->
